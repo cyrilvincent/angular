@@ -12,3 +12,4 @@ Install
 10/ Inspecter le répertoire dist
 11/ Transpiler le projet : ng build --prod
 12/ Inspecter le répertoire dist
+13/ Faites une copie de sauvegarde du répertoire RVG en cas de problème
