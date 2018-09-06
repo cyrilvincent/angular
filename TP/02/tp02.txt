@@ -4,7 +4,7 @@ Install
 2/ Taper npm -v
 3/ Installer Angular CLI : npm install -g @angular/cli
 4/ Taper ng version
-5/ Créer le projet RGD (Retro Game Database) : ng new RGD
+5/ Créer le projet RVG (Retro VideoGame) : ng new RVG
 6/ Inspecter les fichiers crées
 7/ Démarrer le projet : ng serve --open
 8/ Arreter le serveur avec Control+C

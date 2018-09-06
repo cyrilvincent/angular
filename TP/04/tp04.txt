@@ -1,0 +1,13 @@
+First Component
+===============
+1/ Créer le composant games (/!\ avec un s à la fin)
+2/ Inspecter son code
+3/ Ajouter une propriété game = "Space Invaders"
+4/ Afficher game dans le template
+5/ Dans le composant racine afficher uniquement le titre et le composant games
+6/ Tester
+7/ Créer la classe VideoGame avec ng generate class VideoGame
+8/ VideoGame possède un id et un title
+9/ Modifier le composant games pour que game retourne un VideoGame id=1 et title="Space Invaders"
+10/ Afficher l'id et le title du VideoGame
+
