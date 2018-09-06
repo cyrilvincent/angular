@@ -1,0 +1,14 @@
+Install
+=======
+1/ Ouvrir une Console Windows
+2/ Taper npm -v
+3/ Installer Angular CLI : npm install -g @angular/cli
+4/ Taper ng version
+5/ Créer le projet RGD (Retro Game Database) : ng new RGD
+6/ Inspecter les fichiers crées
+7/ Démarrer le projet : ng serve --open
+8/ Arreter le serveur avec Control+C
+9/ Transpiler le projet avec ng build
+10/ Inspecter le répertoire dist
+11/ Transpiler le projet : ng build --prod
+12/ Inspecter le répertoire dist
