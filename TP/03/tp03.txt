@@ -1,0 +1,8 @@
+First Component
+===============
+1/ Dans le composant app changer le titre en "Retro Game Database"
+2/ Tester avec ng serve
+3/ Mettre à jour la CSS en copiant collant de code de todo.css
+4/ Tester
+5/ Ajouter un attribut de classe angular = 6
+6/ Afficher cet attribut en l'incrémentant de 1
