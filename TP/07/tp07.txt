@@ -1,0 +1,4 @@
+Directives
+==========
+1/ Copier le fichier mock-video-games.ts dans app
+2/ Corriger les erreurs induites
