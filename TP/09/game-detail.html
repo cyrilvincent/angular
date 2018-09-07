@@ -1,7 +1,18 @@
-<h2>{{TODO | uppercase}} Details</h2>
-<div><span>id: </span>TODO</div>
-<div>
-  <label>name:
-    <input TODO placeholder="name">
-  </label>
-</div>
+<div id="game-detail">
+    <ng-container>
+      <mat-card class="game-card">
+          <mat-card-header>
+            <mat-card-title>TODO en majuscule</mat-card-title>
+            <mat-card-subtitle>Id: TODO</mat-card-subtitle>
+          </mat-card-header>
+            <div>
+                <mat-form-field>
+                    <input matInput placeholder="title">
+                </mat-form-field>
+            </div>
+        </mat-card>
+        <div id="selectedGame-json">
+            <pre>TODO en JSON</pre>
+        </div>
+    </ng-container>
+  </div>

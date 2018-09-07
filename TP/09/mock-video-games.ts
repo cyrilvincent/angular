@@ -6,7 +6,6 @@ export const VIDEOGAMES: VideoGame[] = [
       editor: 'Taito',
       year: 1978,
       consoles: ['Atari VCS', 'MSX'],
-      image: 'https://fr.wikipedia.org/wiki/Space_Invaders#/media/File:Space_Invaders_style.png',
       play: 'http://www.playretrogames.com/3022-space-invaders-the-original-game'
     },
     { id: 2,
@@ -14,7 +13,6 @@ export const VIDEOGAMES: VideoGame[] = [
       editor: 'Namco',
       year: 1980,
       consoles: ['Atari VCS', 'MSX'],
-      image: 'http://www.vizzed.com/videogames/mame/screenshot/Jr.%20Pac-Man-2.png',
       play: 'https://www.retrogames.cc/arcade-games/pac-man-midway.html'
     },
     { id: 3,
@@ -22,7 +20,6 @@ export const VIDEOGAMES: VideoGame[] = [
       editor: 'Atari',
       year: 1972,
       consoles: ['Atari VCS', 'MSX'],
-      image: 'https://fr.wikipedia.org/wiki/Pong#/media/File:Pong.png',
       play: 'https://www.youtube.com/watch?v=it0sf4CMDeM'
     },
     { id: 4,
@@ -30,7 +27,6 @@ export const VIDEOGAMES: VideoGame[] = [
       editor: 'Nintendo',
       year: 1985,
       consoles: ['NES'],
-      image: 'https://webgames.host/uploads/2016/09/super-mario-bros-164x164.png',
       play: 'https://emulatoronline.com/nes-games/super-mario-bros/'
     },
     { id: 5,
@@ -38,7 +34,6 @@ export const VIDEOGAMES: VideoGame[] = [
       editor: 'Nintendo',
       year: 1984,
       consoles: ['NET', 'Game boy'],
-      image: 'https://upload.wikimedia.org/wikipedia/commons/c/c4/Tetris_basic_game.gif',
       play: 'https://emulatoronline.com/nes-games/classic-tetris/'
     },
     { id: 6,
@@ -46,7 +41,6 @@ export const VIDEOGAMES: VideoGame[] = [
       editor: 'Nintendo',
       year: 1992,
       consoles: ['SNES'],
-      image: 'https://webgames.host/uploads/2015/11/super-mario-kart-164x164.jpg',
       play: 'https://emulatoronline.com/snes-games/super-mario-kart/'
     },
     { id: 7,
@@ -54,7 +48,6 @@ export const VIDEOGAMES: VideoGame[] = [
       editor: 'Nintendo',
       year: 1991,
       consoles: ['SNES'],
-      image: 'https://i.ytimg.com/vi/TYX0KTANbv4/maxresdefault.jpg',
       play: 'https://emulatoronline.com/snes-games/street-fighter-2-turbo-hyper-fighting/'
     },
     { id: 8,
@@ -62,7 +55,6 @@ export const VIDEOGAMES: VideoGame[] = [
       editor: 'Delphine Software',
       year: 1991,
       consoles: ['Atari ST', 'Amiga'],
-      image: 'https://www.anotherworld.fr/images/another_world/AW_arrivee_1280.jpg',
       play: 'https://emulatoronline.com/sega-games/another-world/'
     },
     { id: 9,
@@ -70,7 +62,6 @@ export const VIDEOGAMES: VideoGame[] = [
       editor: 'Capcom',
       year: 1985,
       consoles: ['Amstrad', 'Commodore'],
-      image: 'https://fr.wikipedia.org/wiki/Commando_(jeu_vid%C3%A9o)#/media/File:Commando_Logo.png',
       play: 'https://play-roms.com/coin-op-arcade/commando'
     },
     { id: 10,
@@ -78,7 +69,6 @@ export const VIDEOGAMES: VideoGame[] = [
       editor: 'Vous',
       year: 1900,
       consoles: [],
-      image: '',
       play: ''
     },
   ];

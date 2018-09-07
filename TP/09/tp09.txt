@@ -11,5 +11,10 @@ Directives
 9/ Copier le contenu de game-detail.html et le coller à la fin du template games
 10/ Modifier les TODO et gérer le cas où games==null
 11/ Tester
-12/ Ajouter une classe selected au jeux sélectionné
+12/ Modifier la classe jeux sélectionné à selected=true
+13/ Copier les répertoire images dans src/assets
+14/ Afficher l'image du jeux dans la partie détail
+    <img mat-card-image src="assets/images/games/TODO.png">
+15/ Ajouter un hyperlien pour jouer au jeux, utiliser <a href="TODO" target="_blank">
+
 

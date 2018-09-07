@@ -12,6 +12,7 @@ export class GamesComponent implements OnInit {
   games = VIDEOGAMES;
   selectedGame: VideoGame;
 
+
   constructor() { }
 
   ngOnInit() {
@@ -20,5 +21,4 @@ export class GamesComponent implements OnInit {
   onSelect(game: VideoGame): void {
     this.selectedGame = game;
   }
-
 }

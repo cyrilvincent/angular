@@ -52,6 +52,13 @@
   margin-top: 2rem;
 }
 
+#game-detail img {
+  height: 100px;
+  object-fit: scale-down;
+  margin-top: 1rem;
+
+}
+
 button {
   display: block;
 }

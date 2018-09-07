@@ -4,8 +4,5 @@ export class VideoGame {
     editor: string;
     year: number;
     consoles: string[];
-    image: string;
     play: string;
-
-
 }
