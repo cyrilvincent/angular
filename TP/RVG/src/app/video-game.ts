@@ -6,6 +6,4 @@ export class VideoGame {
     consoles: string[];
     image: string;
     play: string;
-
-
 }

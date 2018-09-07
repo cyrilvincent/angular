@@ -1,4 +1,5 @@
 <h2>Video Games</h2>
+
 <ul class="games">
   <li *ngFor="let game of games"
     [class.selected]="game === selectedGame"
@@ -7,14 +8,21 @@
   </li>
 </ul>
 
-<div *ngIf="selectedGame">
- 
-  <h2>{{selectedGame.name | uppercase}} Details</h2>
-  <div><span>id: </span>{{selectedGame.id}}</div>
-  <div>
-    <label>title:
-      <input [(ngModel)]="selectedGame.title" placeholder="name">
-    </label>
-  </div>
- 
+<div id="game-detail" *ngIf="selectedGame">
+  <ng-container>
+    <mat-card class="game-card">
+        <mat-card-header>
+          <mat-card-title>{{selectedGame.title | uppercase}}</mat-card-title>
+          <mat-card-subtitle>Id: {{selectedGame.id}}</mat-card-subtitle>
+        </mat-card-header>
+          <div>
+              <mat-form-field>
+                  <input matInput placeholder="title" [(ngModel)]="selectedGame.title">
+              </mat-form-field>
+          </div>
+      </mat-card>
+      <div id="selectedGame-json">
+          <pre>{{selectedGame | json}}</pre>
+      </div>
+  </ng-container>
 </div>
