@@ -1,15 +1,15 @@
-Directives
-==========
-1/ Copier le fichier mock-video-games.ts dans app
-2/ Corriger les erreurs induites
-3/ Dans games.component.ts affecter games = VIDEOGAMES après avoir fait l'import adéquat
-4/ Copier games.component.* dans app/games
-5/ Modifier le template games afin d'afficher la liste des jeux
-6/ Tester
-7/ Dans games.component.ts créer l'attribut selectedGame
-8/ Créer la méthode onSelect(game: TODO): void qui affecte game à selectedGame
-9/ Copier le contenu de game-detail.html et le coller à la fin du template games
-10/ Modifier les TODO et gérer le cas où games==null
-11/ Tester
-12/ Ajouter une classe selected au jeux sélectionné
+TS
+==
+1/ Installer Typescript et TSNode
+    Npm install -g typescript
+    Npm install -g ts-node
+2/ Taper ts-node -v
+3/ Créer le dossier ts dans src
+4/ Créer hello.ts
+5/ Créer une variable "Hello World!" et l'afficher
+6/ Exécuter avec ts-node
+7/ Inspecter le .js généré
+8/ Exécuter le .js avec node 
+9/ Créer un tableau d'entier et afficher le contenu
+10/ Créer une méthode qui retourne le max d'un tableau
 
