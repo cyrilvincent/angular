@@ -1,0 +1,19 @@
+TSOO
+====
+0/ Tester au fur et à mesure
+1/ Créer TS/media.ts
+2/ Dans ce fichier créer le namespace MediaEntities
+3/ Créer la classe Editor(id,name) de la manière la plus simple possible
+4/ Créer la classe Author(id,firstName,lastName) avec un constructeur auto-implémenté (constructor(private id, ...))
+5/ Créer la classe abstraite Media(id,title,price,year) avec des getters et setters
+6/ Créer la classe Book qui dérive de Media avec un nbPage
+7/ Créer la classe VideoGame qui dérive de Media avec playUrl
+8/ Créer la l'association Media ->1 Editor
+9/ Créer la l'association Media ->* Author
+10/ Créer le getter abstrait netPrice dans Media et l'implémenter (TVA 5% pour les livres, 20% sinon)
+11/ Créer la classe Cart(id)
+12/ Créer la l'association Cart ->* Media
+13/ Créer le getter Cart.totalNetPrice
+14/ Créer l'interface VideoGameTO représentant le VideoGame du mock
+15/ Utiliser une instanciation JSON afin de construire un VideoGameTO
+16/ Facultatif: remplacer video-game.ts par media.ts
