@@ -1,0 +1,9 @@
+Tests
+=====
+1/ Exécuter ng test et notez qu'il y a des erreurs dans les propres tests générés par Angular
+2/ Dans test.ts cherchez la ligne  const context = require.context('./', true, /\.spec\.ts$/)
+3/ La remplacer par const context = require.context('./ts/', true, /\.spec\.ts$/)
+4/ Il ne devrait plus y avoir d'erreur car il n'y a plus aucun test !
+5/ Copier unittests.spec.ts dans ts/
+6/ Le test devrait être un succès
+7/ Tester media.ts
