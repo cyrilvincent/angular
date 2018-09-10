@@ -1,0 +1,22 @@
+Services
+========
+1/ Générer le service game
+2/ Inspecter le code généré
+3/ Créer la méthode getGames() : VideoGame[] qui retourne VIDEOGAMES depuis mock-video-getGames
+4/ Dans le le composant games, importer et injecter le service créé
+5/ Changer la définition de games en games = VideoGame[]
+6/ Créer la méthode getGames():void qui affecte à games le résultat de GameService.getGames()
+7/ Appeler getGames depuis ngOnInit()
+8/ Tester
+Bonus
+9/ Dans video-game.ts ajouter le code suivant
+    export class Cart {
+        games: VideoGame[] = [];
+        add(game: VideoGame): void {
+            this.games.push(m);
+        }
+    }
+10/ Dans GameService créer l'attribut cart: Cart = new Cart();
+11/ Dans le composant game-detail ajouter un bouton pour ajouter le jeux au panier avec le code associé
+12/ Créer le composant cart qui affiche uniquement le nombre d'élément dans le panier
+13/ Afficher ce composant depuis le composant games

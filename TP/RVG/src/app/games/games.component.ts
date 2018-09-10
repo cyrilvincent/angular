@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { VideoGame } from '../video-game';
-import { VIDEOGAMES } from '../mock-video-games';
+import { GameService } from '../game.service';
 
 @Component({
   selector: 'app-games',
@@ -9,16 +9,21 @@ import { VIDEOGAMES } from '../mock-video-games';
 })
 export class GamesComponent implements OnInit {
 
-  games = VIDEOGAMES;
+  games: VideoGame[];
   selectedGame: VideoGame;
 
 
-  constructor() { }
+  constructor(private gameService: GameService) {}
 
   ngOnInit() {
+    this.getGames();
   }
 
   onSelect(game: VideoGame): void {
     this.selectedGame = game;
+  }
+
+  getGames(): void {
+    this.games = this.gameService.getGames();
   }
 }
