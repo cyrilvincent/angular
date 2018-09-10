@@ -46,9 +46,20 @@ Routing
         this.location.back();
     }
 17/ Puis dans le template HTML ajouter avant le dernier <div> : <button (click)="goBack()">go back</button>
+18/ Créer le composant dashboard
+19/ Copier dashboard/* dans app/dashboard/
+20/ Ajouter la route dashboard
+21/ Dans App ajouter un lien vers dashboard
+22/ Tester
 
-
-/!\angular.json change RGD par RVG
+recopier les dashboard.* dans tp
 
 10/ Ajouter le composant dashboard
 11/ Copier coller les fichiers dashboard.* dans app/dashboard
+12/ TODO pour les titres "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+
+
+TODO Chapitre suivant pour les URLS
+12/ "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"

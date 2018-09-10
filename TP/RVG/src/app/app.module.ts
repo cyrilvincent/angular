@@ -9,6 +9,7 @@ import { GameDetailComponent } from './game-detail/game-detail.component';
 import { CartComponent } from './cart/cart.component';
 import { MessagesComponent } from './messages/messages.component';
 import { AppRoutingModule } from './/app-routing.module';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { AppRoutingModule } from './/app-routing.module';
     GameDetailComponent,
     CartComponent,
     MessagesComponent,
+    DashboardComponent,
   ],
   imports: [
     BrowserModule,
