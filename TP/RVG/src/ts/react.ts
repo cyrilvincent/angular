@@ -1,7 +1,7 @@
-var rx = require("rxjs");
-var op = require('rxjs/operators'); //In ts-node
-//import * as rx from "rxjs";
-//import * as op from 'rxjs/operators'; //In ng
+// var rx = require("rxjs");
+// var op = require('rxjs/operators'); //In ts-node
+import * as rx from 'rxjs';
+import * as op from 'rxjs/operators'; //In ng
 
 const myObservable = rx.of(42);
 myObservable.subscribe((value) => { console.log(value); });

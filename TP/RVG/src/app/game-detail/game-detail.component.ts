@@ -23,7 +23,7 @@ export class GameDetailComponent implements OnInit, OnChanges {
   }
 
   addToCart() {
-    this.gameService.cart.add(this.game);
+    this.gameService.addToCart(this.game);
   }
 
 }

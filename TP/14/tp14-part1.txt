@@ -1,5 +1,5 @@
-RxJS
-====
+RxJS part 1
+===========
 1/ Copier react.ts dans ts/
     ts-node ne sait pas recompiler du ts contenu dans node-modules contrairement à Angular
     Pour utiliser ce code dans ts-node il faut utiliser require (code JS)
@@ -20,3 +20,5 @@ RxJS
 12/ Filtrer les chiffres pairs
 Bonus
 13/ Filtrer les nombres premiers
+
+/!\ Il faut ensuite passer à tp14-part2

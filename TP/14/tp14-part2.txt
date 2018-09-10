@@ -1,0 +1,18 @@
+RxJS part 2
+===========
+1/ Dans GamesService ajouter import {Observable, of} from 'rxjs';
+2/ Changer la signature de GameService.getGames(): VideoGame[] => GameService.getGames(): Observable<VideoGame[]>
+3/ Créer un observateur cette méthode avec of
+4/ Dans GamesComponent modifier getGames avec le code suivant:
+    this.gameService.getGames().subscribe(games => this.games = games);
+5/ Tester, s'il y a une erreur sur react.ts mettre en commentaire les 2 require et décommenter les 2 imports
+6/ Créer un service message
+7/ Copier le contenu de message.service.ts du tp dans le message.service.ts généré
+8/ Créer le composant messages
+9/ Ecraser le répertoire messages généré par celui du tp
+10/ Injecter MessageService dans GameService (Service-in-Service)
+11/ Dans GameService.getGames ajouter this.messageService.add('GameService: fetched games');
+12/ Ajouter le composant Messages à la fin du composant App
+Bonus
+13/ Rendre le panier observable et ajouter des messages
+    Que se passe t'il ?
