@@ -1,0 +1,12 @@
+<h2>Video Games</h2>
+
+<mat-list class="games">
+  <mat-list-item *ngFor="let game of games"
+    [class.selected]="game === selectedGame"
+    (click)="onSelect(game)">
+    <span class="badge">{{game.id}}</span> {{game.title}}
+  </mat-list-item>
+</mat-list>
+
+<app-game-detail [game]="selectedGame"></app-game-detail>
+
