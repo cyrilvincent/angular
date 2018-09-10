@@ -1,0 +1,46 @@
+Routing
+=======
+1/ Créer le module app-routing avec ng generate module app-routing --flat --module=app
+    --flat indique qu'il ne créé pas de sous dossier
+2/ Copier les fichiers app* dans app/
+3/ Examiner le module app-routing
+4/ Dans le composant app.component.html effacer <app-games></app-games> et <app-cart></app-cart> le cas échéant
+5/ A la place ajouter le composant <router-outlet></router-outlet>
+6/ Tester, pourquoi l'URL se termine pas /games ?
+7/ Dans app.component.html ajouter le code suivant après la balise h1
+    <nav><a routerLink="/games">Games</a></nav>
+8/ Tester, il ne se produit pas grand chose car c'est un lien AJAX sur lui même
+9/ Dans GameService ajouter les méthodes suivantes :
+    sortBytitle(a: VideoGame, b: VideoGame): number {
+        if (a.title < b.title) { return -1; } else
+        if (a.title > b.title) { return 1; }
+        return 0;
+    }
+
+    getGame(id: number): Observable<VideoGame> {
+        this.messageService.add(`GameService: fetched hero id=${id}`);
+        return of(VIDEOGAMES.find(game => game.id === id));
+    }
+10/ Dans games.component.html ajouter <a routerLink="/detail/{{game.id}}"> autour du <span ...>
+11/ Enlever la directive app-game-detail
+12/ Dans le composant GameDetail ajouter le code suivant :
+    import { ActivatedRoute } from '@angular/router';
+    import { Location } from '@angular/common';
+13/ Puis les injecter
+    constructor(private gameService: GameService, private route: ActivatedRoute, private location: Location) {}
+14/ Puis ajouter la méthode suivante:
+    getGame(): void {
+        const id = +this.route.snapshot.paramMap.get('id');
+        this.gameService.getGame(id)
+            .subscribe(game => this.game = game);
+    }
+15/ Appeler getGame depuis ngOnInit()
+16/ Ajouter la méthode suivante :
+    goBack(): void {
+        this.location.back();
+    }
+17/ Puis dans le template HTML ajouter avant le dernier <div> : <button (click)="goBack()">go back</button>
+
+
+10/ Ajouter le composant dashboard
+11/ Copier coller les fichiers dashboard.* dans app/dashboard

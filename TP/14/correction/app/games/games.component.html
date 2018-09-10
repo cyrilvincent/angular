@@ -4,10 +4,9 @@
   <mat-list-item *ngFor="let game of games"
     [class.selected]="game === selectedGame"
     (click)="onSelect(game)">
-    <a routerLink="/detail/{{game.id}}">
-      <span class="badge">{{game.id}}</span> {{game.title}}
-    </a>
+    <span class="badge">{{game.id}}</span> {{game.title}}
   </mat-list-item>
 </mat-list>
 
+<app-game-detail [game]="selectedGame"></app-game-detail>
 
