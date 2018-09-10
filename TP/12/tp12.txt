@@ -1,0 +1,15 @@
+Advanced components
+===================
+1/ Générer le composant game-detail (sans s)
+    /!\ ng generate component game --module app
+    L'option --module signifie qui est le module principal car il y en a 2 à la racine à cause de material
+2/ Migrer le code game -> game-detail
+3/ Dans game-detail l'attribut du jeux en cours s'appel game, modifier le template en conséquence
+4/ Passer GameDetailComponent.game est une propriété Input
+5/ Inclure le composant game-detail dans le composant game en gérant le passage de paramètre
+6/ Dans la classe VideoGame ajouter l'attribut nbView: number = 0
+    Hélas, TS n'a pas encore un bon mécanisme de propriété par défaut, il fait modifier le mok pour ajouter nbView
+7/ Implémenter l'interface OnChanges dans GameDetailComponent
+8/ Incrémenter nbView à chaque Vue
+    /!\ A cause de l'asynchronisme this.nbView peut être undefined
+9/ Afficher nbView
