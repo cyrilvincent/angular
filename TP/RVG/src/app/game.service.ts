@@ -27,4 +27,15 @@ export class GameService {
     );
   }
 
+  sortBytitle(a: VideoGame, b: VideoGame): number {
+      if (a.title < b.title) { return -1; } else
+      if (a.title > b.title) { return 1; }
+      return 0;
+  }
+
+  getGame(id: number): Observable<VideoGame> {
+      this.messageService.add(`GameService: fetched hero id=${id}`);
+      return of(VIDEOGAMES.find(game => game.id === id));
+  }
+
 }

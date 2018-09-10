@@ -19,6 +19,10 @@
     height: 1.6em;
     border-radius: 4px;
   }
+  .games mat-list-item a {
+    text-decoration: none;
+    color: black
+  }
   .games mat-list-item.selected:hover {
     background-color: #BBD8DC !important;
     color: white;
@@ -32,7 +36,7 @@
     position: relative;
     top: -3px;
   }
-  .games .badge {
+  .badge {
     display: inline-block;
     font-size: small;
     color: white;

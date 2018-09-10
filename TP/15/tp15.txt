@@ -21,9 +21,15 @@ Routing
         this.messageService.add(`GameService: fetched hero id=${id}`);
         return of(VIDEOGAMES.find(game => game.id === id));
     }
-10/ Dans games.component.html ajouter <a routerLink="/detail/{{game.id}}"> autour du <span ...>
-11/ Enlever la directive app-game-detail
-12/ Dans le composant GameDetail ajouter le code suivant :
+10/ Dans games.component.html ajouter <a routerLink="/detail/{{game.id}}"> de {{game.title}}
+11/ Enlever la balise H2 et son contenu
+12/ Enlever la directive app-game-detail
+13/ Dans games.component.css ajouter le bloc
+    .games mat-list-item a {
+        text-decoration: none;
+        color: black
+    }
+14/ Dans le composant GameDetail ajouter le code suivant :
     import { ActivatedRoute } from '@angular/router';
     import { Location } from '@angular/common';
 13/ Puis les injecter
@@ -41,7 +47,7 @@ Routing
     }
 17/ Puis dans le template HTML ajouter avant le dernier <div> : <button (click)="goBack()">go back</button>
 
-/!\ style pb : 13 ok 14 pas ok
+
 /!\angular.json change RGD par RVG
 
 10/ Ajouter le composant dashboard
