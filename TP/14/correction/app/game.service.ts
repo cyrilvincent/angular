@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {VIDEOGAMES} from './mock-video-games';
 import {VideoGame, Cart} from './video-game';
 import {Observable, of} from 'rxjs';
+import {map} from 'rxjs/operators';
 import {MessageService} from './message.service';
 
 @Injectable({
@@ -9,7 +10,7 @@ import {MessageService} from './message.service';
 })
 export class GameService {
 
-  cart: Cart = new Cart();
+  ocart: Observable<Cart> = of(new Cart());
 
   constructor(private messageService: MessageService) { }
 
@@ -18,13 +19,12 @@ export class GameService {
     return of(VIDEOGAMES);
   }
 
-  getCart(): Observable<Cart> {
-    return of(this.cart);
-  }
-
   addToCart(game: VideoGame): void {
     this.messageService.add('GameService: add ' + game.title + ' to cart');
-    this.cart.add(game);
+    // this.cart.add(game);
+    this.ocart.pipe(
+      map(cart => cart.add(game))
+    );
   }
 
 }

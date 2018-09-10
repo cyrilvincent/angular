@@ -18,7 +18,7 @@ export class CartComponent implements OnInit {
   ngOnInit() {
     // this.nbElement = this.gameService.cart.games.length;
     this.messageService.add('Retrieve cart with ' + this.nbElement + ' elements');
-    this.gameService.getCart().subscribe(cart => this.nbElement = cart.games.length);
+    this.gameService.ocart.subscribe(cart => this.nbElement = cart.games.length);
   }
 
 }

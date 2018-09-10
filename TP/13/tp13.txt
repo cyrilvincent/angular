@@ -18,7 +18,7 @@ Bonus
         }
     }
 10/ Dans GameService créer l'attribut cart: Cart = new Cart();
-11/ Dans le composant game-detail ajouter un bouton pour ajouter le jeux au panier avec le code associé
+11/ Dans le composant game-detail ajouter un lien pour ajouter le jeux au panier avec le code associé
 12/ Créer le composant cart qui affiche uniquement le nombre d'élément dans le panier
 13/ Afficher ce composant depuis le composant app
 14/ Pourquoi le compteur reste à zéro ?

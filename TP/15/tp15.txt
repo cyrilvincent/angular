@@ -41,6 +41,8 @@ Routing
     }
 17/ Puis dans le template HTML ajouter avant le dernier <div> : <button (click)="goBack()">go back</button>
 
+/!\ style pb : 13 ok 14 pas ok
+/!\angular.json change RGD par RVG
 
 10/ Ajouter le composant dashboard
 11/ Copier coller les fichiers dashboard.* dans app/dashboard

@@ -14,7 +14,7 @@
             <img mat-card-image src="assets/images/games/{{game.id}}.png">
           </div>
           <div>
-            <a href="#"  (click)="addToCart()">
+            <a (click)="addToCart()">
               <i class="material-icons">
                 add_shopping_cart
               </i>
@@ -34,5 +34,4 @@
           <pre>{{game | json}}</pre>
       </div>
   </ng-container>
-  <button (click)="goBack()">go back</button>
 </div>
