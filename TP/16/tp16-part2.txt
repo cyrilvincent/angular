@@ -1,0 +1,18 @@
+Complex Component
+=================
+1/ Créer le composant games-search
+2/ Copier games-search.*
+3/ Dans GameService ajouter
+    searchGames(term: string): Observable<VideoGame[]> {
+        if (!term.trim()) {
+        return of([]);
+        }
+        return this.http.get<VideoGame[]>(`${environment.gamesUrl}/?title=${term}`);
+    }
+4/ Ajouter une route et un lien vers ce composant
+5/ Il s'agit de la version finale du TP offline sans serveur Web
+6/ Sauvegarder l'intégralité des sources
+Facultatif
+7/ Il serait plus judicieux de réutiliser le composant games en passant games$ comme paramètre @Input
+8/ Si la recherche est vide renvoyer tous les games
+9/ La route et le lien vers le composant games deviendrait alors inutile
