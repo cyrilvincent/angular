@@ -6,7 +6,8 @@ export const environment = {
   production: false,
   version: '0.1',
   copyright: 'Cyril Vincent',
-  gamesUrl: 'api/games',
+  // gamesUrl: 'api/games',
+  gamesUrl: 'http://localhost:5000/games',
 };
 
 /*

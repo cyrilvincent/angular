@@ -34,9 +34,9 @@ import { GamesSearchComponent } from './games-search/games-search.component';
     MaterialModule,
     AppRoutingModule,
     HttpClientModule,
-    HttpClientInMemoryWebApiModule.forRoot(
+    /*HttpClientInMemoryWebApiModule.forRoot(
       InMemoryDataService, { dataEncapsulation: false }
-    )
+    )*/
   ],
   providers: [],
   bootstrap: [AppComponent]

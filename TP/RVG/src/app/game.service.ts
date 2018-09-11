@@ -24,6 +24,7 @@ export class GameService {
 
   getGames(): Observable<VideoGame[]> {
     this.messageService.add('GameService: fetched games');
+    console.log(environment.gamesUrl);
     return this.http.get<VideoGame[]>(environment.gamesUrl);
   }
 

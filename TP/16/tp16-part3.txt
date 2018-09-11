@@ -1,0 +1,7 @@
+Real REST Service
+=================
+/*HttpClientInMemoryWebApiModule.forRoot(
+      InMemoryDataService, { dataEncapsulation: false }
+    )*/
+Ajouter http://localhost:5000 dans index.html
+Verifier http://localhost:5000/games en //
