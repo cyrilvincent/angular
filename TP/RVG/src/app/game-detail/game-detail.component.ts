@@ -17,11 +17,17 @@ export class GameDetailComponent implements OnInit, OnChanges {
 
   ngOnInit() {
     this.getGame();
+    this.incrementNbView();
   }
 
   ngOnChanges() {
+    // this.incrementNbView();
+  }
+
+  incrementNbView() {
     if (this.game) {
-      this.game.nbView++;
+      console.log(`Game.nbView++ `);
+      this.gameService.incrementNbView(this.game);
     }
   }
 

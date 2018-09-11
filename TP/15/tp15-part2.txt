@@ -1,0 +1,14 @@
+Components Event
+================
+    
+
+
+
+12/ TODO pour les titres "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+TODO Cart
+TODO Update videogames const 
++ (évent) up 
++ découper en 2 part
+TODO Chapitre suivant pour les URLS
+
