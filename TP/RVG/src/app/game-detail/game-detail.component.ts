@@ -18,7 +18,7 @@ export class GameDetailComponent implements OnInit, OnChanges {
 
   ngOnInit() {
     this.getGame();
-    this.incrementNbView();
+    // this.incrementNbView();
   }
 
   ngOnChanges() {
@@ -41,11 +41,19 @@ export class GameDetailComponent implements OnInit, OnChanges {
   getGame(): void {
     const id = +this.route.snapshot.paramMap.get('id');
     this.gameService.getGame(id)
-        .subscribe(game => this.game = game);
+        .subscribe(game => {
+          this.game = game;
+          this.incrementNbView();
+        });
   }
 
   goBack(): void {
     this.location.back();
+  }
+
+  save(): void {
+    this.gameService.updateGame(this.game)
+        .subscribe(() => this.goBack());
   }
 
 }
