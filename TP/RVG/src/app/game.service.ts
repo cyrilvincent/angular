@@ -24,24 +24,19 @@ export class GameService {
 
   getGames(): Observable<VideoGame[]> {
     this.messageService.add('GameService: fetched games');
-    // return of(VIDEOGAMES.sort((x, y) => x.id - y.id));
     return this.http.get<VideoGame[]>(environment.gamesUrl);
   }
 
   getGame(id: number): Observable<VideoGame> {
-      this.messageService.add(`GameService: fetched hero id=${id}`);
-      // return of(VIDEOGAMES.find(game => game.id === id));
+      this.messageService.add(`GameService: fetched game id=${id}`);
       return this.http.get<VideoGame>(`${environment.gamesUrl}/${id}`);
   }
 
   getTop4(): Observable<VideoGame[]> {
     this.messageService.add('GameService: fetched TOP4 games');
-    return of(VIDEOGAMES.sort((x, y) => y.nbView - x.nbView).slice(0, 4));
-  }
-
-  incrementNbView(game: VideoGame): void {
-    console.log(`Game.nbView++ ${game.id}`);
-    game.nbView++;
+    return this.getGames().pipe(
+      map(games => games.sort((x, y) => y.nbView - x.nbView).slice(0, 4))
+    );
   }
 
   getCart(): Observable<Cart> {
@@ -59,7 +54,7 @@ export class GameService {
   }
 
   updateGame (game: VideoGame): Observable<any> {
-    console.log(`updated game id=${game.id}`);
+    console.log(`update game ${game.title} ${game.nbView}`);
     return this.http.put(environment.gamesUrl, game, httpOptions);
   }
 

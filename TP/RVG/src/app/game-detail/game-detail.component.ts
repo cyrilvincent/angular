@@ -9,7 +9,7 @@ import { Location } from '@angular/common';
   templateUrl: './game-detail.component.html',
   styleUrls: ['./game-detail.component.css']
 })
-export class GameDetailComponent implements OnInit, OnChanges {
+export class GameDetailComponent implements OnInit {
 
   @Input() game: VideoGame;
   @Output() addedToCard = new EventEmitter<Cart>();
@@ -18,17 +18,6 @@ export class GameDetailComponent implements OnInit, OnChanges {
 
   ngOnInit() {
     this.getGame();
-    // this.incrementNbView();
-  }
-
-  ngOnChanges() {
-    // this.incrementNbView();
-  }
-
-  incrementNbView() {
-    if (this.game) {
-      this.gameService.incrementNbView(this.game);
-    }
   }
 
   addToCart() {
@@ -43,7 +32,8 @@ export class GameDetailComponent implements OnInit, OnChanges {
     this.gameService.getGame(id)
         .subscribe(game => {
           this.game = game;
-          this.incrementNbView();
+          this.game.nbView += 1;
+          this.gameService.updateGame(this.game).subscribe();
         });
   }
 
