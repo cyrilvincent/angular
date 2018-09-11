@@ -39,3 +39,6 @@ h2, h3 {
   nav a.active {
     color: #039be5;
   }
+  .footer {
+    font-family: Arial;
+  }

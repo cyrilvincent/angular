@@ -23,7 +23,6 @@ Routing
 
     incrementNbView(game: VideoGame): void {
         game.nbView++;
-        VIDEOGAMES.find(g => g.id === game.id).nbView++;
         console.log(`Game.nbView++ ${game.id}`);
     }
 10/ Dans games.component.html ajouter <a routerLink="/detail/{{game.id}}"> de {{game.title}}

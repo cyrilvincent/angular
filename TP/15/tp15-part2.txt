@@ -1,14 +1,95 @@
 Components Event
 ================
-    
+1/ Si ce n'est pas déjà fait créer la classe Cart dans video-game.ts
+    export class Cart {
+        games: VideoGame[] = [];
+        add(game: VideoGame): void {
+            this.games.push(game);
+            console.log(game.title + ' added to cart');
+        }
+    }
+2/ Dans GameService créer la propriété cart$ :
+    cart$: Observable<Cart> = of(new Cart());
+3/ Ajouter ces 2 méthodes :
+    getCart(): Observable<Cart> {
+        return this.cart$;
+    }
 
+    addToCart(game: VideoGame): Cart {
+        this.messageService.add('GameService: add ' + game.title + ' to cart');
+        this.cart.add(game);
+        return this.cart;
+    }
+4/ Si ce n'est pas déjà fait, dans GameDetail ajouter la méthode
+    addToCart() {
+        this.gameService.addToCart(this.game);
+    }
+5/ Si ce n'est pas dejà fait, dans le template game-detail ajouter le code où bon vous semble :
+    <div>
+        <a (click)="addToCart()">
+                <i class="material-icons">
+                    add_shopping_cart
+                </i>
+        </a>
+    </div>
+6/ Si ce n'est pas déjà fait créer le composant cart et récupérer le code du tp
+7/ Dans app.component.html ajouter la directive cart
+8/ Tester, pourquoi CartComponent.nbElement reste à 0
+9/ Il existe 2 stratégies pour envoyer un event de GameDetail vers Cart, la première est la stratégie du shared service event
+10/ Dans GameService ajouter les 2 attributs suivants :
+    emitChangeSource = new Subject<Cart>();
+    changeEmitted$ = this.emitChangeSource.asObservable();
+11/ Puis la méthode
+        emitChange(change: Cart) {
+            this.emitChangeSource.next(change);
+        }
+12/ Dans GameDetailComponent.addToCart modifier n peu le code
+        const cart: Cart = this.gameService.addToCart(this.game);
+        this.gameService.emitChange(cart); // Shared Service event strategy
+13/ Dans CartComponent modifier vore code pour obtenir
+ngOnInit() {
+    this.getCart();
+        this.gameService.changeEmitted$.subscribe(
+        cart => this.nbElement = cart.games.length
+        );
+    }
 
+    getCart() {
+        this.messageService.add('Retrieve cart with ' + this.nbElement + ' elements');
+        this.gameService.getCart().subscribe(cart => this.nbElement = cart.games.length);
+    }
+14/ Tester
+15/ L'autre méthode est vue à la fin du tp
+16/ Ouvrir le fichier angular.json à la racine du projet
+17/ Etudier le code suivant
+    "fileReplacements": [
+        {
+            "replace": "src/environments/environment.ts",
+            "with": "src/environments/environment.prod.ts"
+        }
+    ],
+18/ Ouvrir environments/environment.ts
+19/ Ajouter le code suivant
+        version: '0.1 DEV',
+        copyright: 'Votre nom',
+20/ Faire de même dans le fichier .prod en changeant DEV par PROD
+21/ Dans AppComponent importer import { environment } from '../environments/environment';
+22/ Créer l'attribut environment = environment
+23/ Afficher en bas de page la version, le copyright, et DEV si le logiciel est en développement
+24/ Tester avec ng serve puis ng serve --prod
+FACULTATIF
+25/ L'autre méthode de synchronisation s'appelle Local Upload Event Strategy est plus "propre" mais elle est assez difficile dans les structures de composants complexes et ne marche pas pour un composant appeler directement depuis <router-outlet> ce qui est notre cas
+26/ Dans GameDetailComponent ajouter l'attribut @Output() addedToCard = new EventEmitter<Cart>();
+27/ Dans addToCart ajouter le code this.addedToCard.emit(cart);
+28/ Dans app.component.html ajouter <app-game-detail (addedToCart)="onAddedToCart($event)"></app-game-detail>
+    Ne marche pas avec <router-outlet>
+29/ Dans AppComponent ajouter la méthode
+    cart: Cart;
 
-12/ TODO pour les titres "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.prod.ts"
-TODO Cart
-TODO Update videogames const 
-+ (évent) up 
-+ découper en 2 part
-TODO Chapitre suivant pour les URLS
+    addedToCart(cart: Cart) {
+        this.cart = cart;
+    }
+30/ Dans app.component.html modifier <app-cart [cart]="{{cart}}">
+31/ Dans CartComponent rendre l'attribut cart @input
+    C'est assez complexe !
 
