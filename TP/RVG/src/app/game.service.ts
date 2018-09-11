@@ -4,6 +4,8 @@ import {VideoGame, Cart} from './video-game';
 import {Observable, of, from, Subject} from 'rxjs';
 import {map} from 'rxjs/operators';
 import {MessageService} from './message.service';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { environment } from '../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -14,16 +16,18 @@ export class GameService {
   emitChangeSource = new Subject<Cart>();
   changeEmitted$ = this.emitChangeSource.asObservable();
 
-  constructor(private messageService: MessageService) { }
+  constructor(private messageService: MessageService, private http: HttpClient) { }
 
   getGames(): Observable<VideoGame[]> {
     this.messageService.add('GameService: fetched games');
-    return of(VIDEOGAMES.sort((x, y) => x.id - y.id));
+    // return of(VIDEOGAMES.sort((x, y) => x.id - y.id));
+    return this.http.get<VideoGame[]>(environment.gamesUrl);
   }
 
   getGame(id: number): Observable<VideoGame> {
       this.messageService.add(`GameService: fetched hero id=${id}`);
-      return of(VIDEOGAMES.find(game => game.id === id));
+      // return of(VIDEOGAMES.find(game => game.id === id));
+      return this.http.get<VideoGame>(`${environment.gamesUrl}/${id}`);
   }
 
   getTop4(): Observable<VideoGame[]> {

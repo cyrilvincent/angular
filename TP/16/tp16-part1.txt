@@ -1,0 +1,26 @@
+Mock Service
+============
+1/ Installer InMemoryWebApi : npm install angular-in-memory-web-api --save
+2/ Copier in-memory-data.service.ts dans src/app/
+3/ Dans app.module ajouter sans toucher la section imports
+    import { HttpClientModule }    from '@angular/common/http';
+    import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+    import { InMemoryDataService }  from './in-memory-data.service';
+    // /!\ la section imports est un peu complexe
+4/ Dans la section imports il faut ajouter:
+    HttpClientModule,
+    HttpClientInMemoryWebApiModule.forRoot(
+      InMemoryDataService, { dataEncapsulation: false }
+    )
+5/ Dans Environment ajouter la variable gamesUrl: 'api/games',
+6/ Dans GameService ajouter
+    import { HttpClient, HttpHeaders } from '@angular/common/http';
+    import { environment } from '../environments/environment';
+7/ Injecter http: HttpClient
+8/ Dans getGames remplacer le code :
+    // return of(VIDEOGAMES.sort((x, y) => x.id - y.id));
+    return this.http.get<VideoGame[]>(environment.gamesUrl);
+9/ Pourquoi la signature de la méthode ne change pas ?
+10/ Tester
+11/ Dans getGame mettre à jour le code pour l'URL api/games/1 pour l'id 1
+12/ Tester

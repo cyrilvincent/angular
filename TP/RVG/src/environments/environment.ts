@@ -6,6 +6,7 @@ export const environment = {
   production: false,
   version: '0.1',
   copyright: 'Cyril Vincent',
+  gamesUrl: 'api/games',
 };
 
 /*
