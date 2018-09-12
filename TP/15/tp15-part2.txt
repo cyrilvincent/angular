@@ -77,6 +77,7 @@ ngOnInit() {
 22/ Créer l'attribut environment = environment
 23/ Afficher en bas de page la version, le copyright, et DEV si le logiciel est en développement
 24/ Tester avec ng serve puis ng serve --prod
+25/ Important, exécuter ng build --output-path=dist/RVG15
 FACULTATIF
 25/ L'autre méthode de synchronisation s'appelle Local Upload Event Strategy est plus "propre" mais elle est assez difficile dans les structures de composants complexes et ne marche pas pour un composant appeler directement depuis <router-outlet> ce qui est notre cas
 26/ Dans GameDetailComponent ajouter l'attribut @Output() addedToCard = new EventEmitter<Cart>();
