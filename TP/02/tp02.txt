@@ -8,8 +8,11 @@ Install
 6/ Inspecter les fichiers crées
 7/ Démarrer le projet : ng serve --open
 8/ Arreter le serveur avec Control+C
-9/ Transpiler le projet avec ng build
-10/ Inspecter le répertoire dist
-11/ Transpiler le projet : ng build --prod
-12/ Inspecter le répertoire dist
-13/ Faites une copie de sauvegarde du répertoire RVG en cas de problème
+9/ Tester ng build et aller voir le répertoire dist/RVG
+10/ Tester ng build --prod --output-path=dist/prod  et aller voir le code généré
+11/ Ouvrir une ligne de commande dans le répertoire python-server
+12/ Exécuter tiny \absolutepath\dist\rvg 
+    Par exemple tiny D:\CVC\Formation\JS\Angular\GIT\TP\RVG\dist\RVG 
+    tiny est un micro serveur web
+13/ Tester localhost
+14/ Faire de même avec le répertoire /dist/prod
