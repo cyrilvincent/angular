@@ -6,12 +6,11 @@
     <meta charset="utf-8">
     <meta http-equiv="Content-Security-Policy"
           content="
-          default-src 'self' http://localhost:5000 'unsafe-inline' 'unsafe-eval'
+          default-src 'self' 'unsafe-inline' 'unsafe-eval'
           data:
           blob:
           wss:
 
-          
           http://*.google-analytics.com
           http://*.googletagmanager.com
 
@@ -33,7 +32,6 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet">
 </head>
 <body class="mat-app-background">
-<script type=”text/javascript” src=”cordova.js”></script>
 <noscript>
     <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TF7QP5M" height="0" width="0"
             style="display:none;visibility:hidden"></iframe>
