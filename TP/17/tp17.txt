@@ -21,11 +21,12 @@ Cordova
 11/ Récupérer le .apk dans platforms\android\app\build\outputs\apk\debug et tester sur un smartphone
 12/ Tester cordova run windows
     Prérequis : .NET SDK + Windows 10
-13/ Tester cordova build iOS
+13/ Tester cordova build ios
     Nécessite un Mac pour compiler
 14/ Copier le contenu de RVG/dist/RVG/* vers RVG-cordova/www/
 15/ Ouvrir index.html
 16/ Ajouter la ligne : <script type=”text/javascript” src=”cordova.js”></script>
+17/ Modifier la la ligne <base href="."> (peut être effectué avec ng build)
 17/ Tester sur Android
 18/ Installer le sur votre téléphone
 
