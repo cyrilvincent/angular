@@ -1,4 +1,0 @@
-#Wed Sep 12 16:21:13 CEST 2018
-base.0=D\:\\CVC\\Formation\\JS\\Angular\\GIT\\TP\\RVGCordova\\platforms\\android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0
-renamed.0=classes.dex
-file.0=D\:\\CVC\\Formation\\JS\\Angular\\GIT\\TP\\RVGCordova\\platforms\\android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0\\classes.dex
