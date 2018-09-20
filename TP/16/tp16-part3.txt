@@ -25,12 +25,12 @@ Real REST Service
 13/ Modifier GameService.search :
     searchGames(term: string): Observable<VideoGame[]> {
         if (!term.trim()) {
-        return of([]);
+            return of([]);
         }
         if (environment.production) {
-        return this.http.get<VideoGame[]>(`${environment.gamesUrl}/search?q=${term}`);
+            return this.http.get<VideoGame[]>(`${environment.gamesUrl}/search?q=${term}`);
         } else {
-        return this.http.get<VideoGame[]>(`${environment.gamesUrl}/?title=${term}`);
+            return this.http.get<VideoGame[]>(`${environment.gamesUrl}/?title=${term}`);
         }
     }
 14/ Tester
@@ -42,4 +42,16 @@ Real REST Service
     tiny est un micro serveur web
 19/ Tester localhost
 20/ Faire de même avec le répertoire /dist/prod
+FACULTATIF
+21/ Gérer les erreurs avec un HTTPInterceptor en copiant request-interceptor.ts dans app/
+22/ Dans app.module.ts ajouter 
+    providers: [
+        {
+        provide: HTTP_INTERCEPTORS,
+        useClass: HttpErrorInterceptor,
+        multi: true,
+        }
+    ],
+23/ Tester en arretant le serveur
+
 

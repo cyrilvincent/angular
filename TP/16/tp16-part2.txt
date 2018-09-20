@@ -5,7 +5,7 @@ Complex Component
 3/ Dans GameService ajouter
     searchGames(term: string): Observable<VideoGame[]> {
         if (!term.trim()) {
-        return of([]);
+            return of([]);
         }
         return this.http.get<VideoGame[]>(`${environment.gamesUrl}/?title=${term}`);
     }

@@ -27,8 +27,8 @@ Cordova
 15/ Ouvrir index.html
 16/ Ajouter la ligne : <script type=”text/javascript” src=”cordova.js”></script>
 17/ Modifier la la ligne <base href="."> (peut être effectué avec ng build)
-17/ Tester sur Android
-18/ Installer le sur votre téléphone
+18/ Tester sur Android
+19/ Installer le sur votre téléphone
 
 
 

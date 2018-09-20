@@ -10,12 +10,13 @@ import { CartComponent } from './cart/cart.component';
 import { MessagesComponent } from './messages/messages.component';
 import { AppRoutingModule } from './/app-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './in-memory-data.service';
 import { GameCreateComponent } from './game-create/game-create.component';
 import { GamesSearchComponent } from './games-search/games-search.component';
 import { environment } from '../environments/environment';
+import { HttpErrorInterceptor } from './request-interceptor';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,13 @@ import { environment } from '../environments/environment';
         InMemoryDataService, { dataEncapsulation: false }
       )
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: HttpErrorInterceptor,
+      multi: true,
+    }
+  ],
   bootstrap: [AppComponent]
 })
 
