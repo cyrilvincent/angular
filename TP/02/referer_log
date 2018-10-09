@@ -1,0 +1,6 @@
+http://localhost/ -> /runtime.js
+http://localhost/ -> /polyfills.js
+http://localhost/ -> /styles.js
+http://localhost/ -> /vendor.js
+http://localhost/ -> /main.js
+http://localhost/games -> /favicon.ico

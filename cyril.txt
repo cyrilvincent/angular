@@ -1,1 +1,1 @@
-Ajouter node_modules dans .get/info/exclude .gitignore ne semble pas fontionner correctement
+Ajouter node_modules dans .get/info/exclude .gitignore ne semble pas fonctionner correctement

@@ -82,17 +82,12 @@ mock = [
   ];
 
 @app.route("/")
-def hello():
-    s = """Python REST Service VideoGame
-=============================
-GET /games
-GET /games/<id>
-GET /games/top/<n>
-GET /games/search/?q=s
-POST /games
-PUT /games
-DELETE /games"""
-    return flask.Response(s, mimetype='text/plain')
+def autodoc():
+    s="<html><body>"
+    for rule in app.url_map.iter_rules():
+        s += f"{rule.methods} <a href='http://localhost:5000{rule}'>{rule}</a> {rule.arguments}<br/>"
+    s+="</body></html>"
+    return s
 
 @app.route("/games")
 def all():

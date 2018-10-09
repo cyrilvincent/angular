@@ -16,3 +16,4 @@ Install
     tiny est un micro serveur web
 13/ Tester localhost
 14/ Faire de même avec le répertoire /dist/prod
+15/ Pour arrêter Tiny taskkill /F /IM tiny.exe
