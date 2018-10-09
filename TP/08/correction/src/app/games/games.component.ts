@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { VideoGame, Cart } from '../video-game';
+import { VideoGame } from '../video-game';
 
 @Component({
   selector: 'app-games',

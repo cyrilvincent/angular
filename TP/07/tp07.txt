@@ -7,9 +7,6 @@ TS
 3/ Créer le dossier ts dans src
 4/ Créer hello.ts
 5/ Créer une variable "Hello World!" et l'afficher
-6/ Exécuter avec ts-node
-7/ Inspecter le .js généré
-8/ Exécuter le .js avec node 
-9/ Créer un tableau d'entier et afficher le contenu
-10/ Créer une méthode qui retourne le max d'un tableau
+6/ Créer un tableau d'entier et afficher le contenu
+7/ Créer une méthode qui retourne le max d'un tableau
 

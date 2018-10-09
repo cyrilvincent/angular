@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {VideoGame} from '../video-game';
+import { VideoGame } from '../video-game';
 
 @Component({
   selector: 'app-games',
@@ -13,9 +13,11 @@ export class GamesComponent implements OnInit {
     title: 'Space Invaders',
   };
 
+
   constructor() { }
 
   ngOnInit() {
   }
+
 
 }
