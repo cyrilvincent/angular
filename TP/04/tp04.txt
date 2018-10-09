@@ -8,6 +8,6 @@ First Component
 6/ Tester
 7/ Créer la classe VideoGame avec ng generate class VideoGame
 8/ VideoGame possède un id et un title
-9/ Modifier le composant games pour que game retourne un VideoGame id=1 et title="Space Invaders"
+9/ Modifier le composant games pour que game retourne le VideoGame id=1 et title="Space Invaders"
 10/ Afficher l'id et le title du VideoGame
 
