@@ -1,5 +1,5 @@
 namespace MediaEntities {
-    export class Publisher {
+    export class Editor {
         id: number;
         name: string;
     }
@@ -14,7 +14,7 @@ namespace MediaEntities {
         id: number;
         title: string;
         price: number;
-        publisher: Publisher;
+        editor: Editor;
         authors: Array<Author>;
     }
 
@@ -22,7 +22,7 @@ namespace MediaEntities {
         private _id: number;
         private _title: string;
         private _price: number;
-        private _publisher: Publisher;
+        private _editor: Editor;
         private _authors: Array<Author> = new Array<Author>();
 
         public constructor(id: number, title: string, price: number = -1) {
@@ -44,8 +44,8 @@ namespace MediaEntities {
         get price(): number { return this._price; }
         set price(price: number) { this._price = price; }
 
-        get publisher(): Publisher { return this._publisher; }
-        set publisher(p: Publisher) { this._publisher = p; }
+        get editor(): Editor { return this._editor; }
+        set editor(e: Editor) { this._editor = e; }
 
         get authors(): Array<Author> { return this._authors; }
         set authors(authors: Array<Author>) { this._authors = authors; }
@@ -53,6 +53,11 @@ namespace MediaEntities {
 
     export class Book extends Media {
         private _nbPage: number;
+
+        public constructor(id: number, title: string, price: number = -1, nbPage: number = 0) {
+           super(id, title, price);
+           this._nbPage = nbPage;
+        }
 
         get nbPage(): number { return this._nbPage; }
         set nbPage(nbPage: number) { this._nbPage = nbPage; }
@@ -64,6 +69,14 @@ namespace MediaEntities {
 
     export class Cd extends Media {
         nbTrack: number;
+
+        public getNetPrice(): number {
+            return this.price * 1.2;
+        }
+    }
+
+    export class VideoGame extends Media {
+        pegi: number;
 
         public getNetPrice(): number {
             return this.price * 1.2;
@@ -86,13 +99,37 @@ namespace MediaEntities {
             return total;
         }
     }
+
+    export interface VideoGameTO {
+        id: number;
+        title: string;
+        editor: string;
+        year: number;
+        consoles: string[];
+        play: string;
+    }
 }
 
 import me = MediaEntities;
-let publisher: me.Publisher = new me.Publisher();
-publisher.id = 1;
-publisher.name = 'ENI';
+let editor: me.Editor = new me.Editor();
+editor.id = 1;
+editor.name = 'ENI';
 let author: me.Author = {id: 1, firstName: 'Cyril', lastName: 'Vincent'};
+let to: me.VideoGameTO = { id: 1,
+                            title: 'Space Invaders',
+                            editor: 'Taito',
+                            year: 1978,
+                            consoles: ['Atari VCS', 'MSX'],
+                            play: 'http://www.playretrogames.com/3022-space-invaders-the-original-game'
+                        };
+let cart: me.Cart = new me.Cart();
+let book: me.Book = new me.Book(0,"Typescript", 10);
+let game: me.VideoGame = new me.VideoGame(1,"Space Invaders",10)
+cart.add(book)
+cart.add(game)
+console.log(cart.getTotalNetPrice());
+
+
 
 
 

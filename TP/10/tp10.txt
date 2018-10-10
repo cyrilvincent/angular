@@ -1,6 +1,6 @@
 TSOO
 ====
-0/ Tester au fur et à mesure
+0/ Lire et comprendre BankAccount.ts
 1/ Créer TS/media.ts
 2/ Dans ce fichier créer le namespace MediaEntities
 3/ Créer la classe Editor(id,name) de la manière la plus simple possible
@@ -16,4 +16,3 @@ TSOO
 13/ Créer le getter Cart.totalNetPrice
 14/ Créer l'interface VideoGameTO représentant le VideoGame du mock
 15/ Utiliser une instanciation JSON afin de construire un VideoGameTO
-16/ Facultatif: remplacer video-game.ts par media.ts
