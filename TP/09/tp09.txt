@@ -1,7 +1,7 @@
 Directives
 ==========
 1/ Copier le fichier mock-video-games.ts dans app
-2/ Corriger les erreurs induites
+2/ Corriger les erreurs induites dans VideoGame
 3/ Dans games.component.ts affecter games = VIDEOGAMES après avoir fait l'import adéquat
 4/ Copier games.component.* dans app/games
 5/ Modifier le template games afin d'afficher la liste des jeux
@@ -14,7 +14,9 @@ Directives
 12/ Modifier la classe du jeux sélectionné à selected=true
 13/ Copier les répertoires images dans src/assets
 14/ Afficher l'image du jeux dans la partie détail
-    <img mat-card-image src="assets/images/games/TODO.png">
+    <img mat-card-image src="TODO">
 15/ Ajouter un hyperlien pour jouer au jeux, utiliser <a href="TODO" target="_blank">
+16/ Bonus : Créer la directive d'attribut highlight, inutile avec Material
+17/ Bonus : Créer la directive structurelle Unless et changer le *ngIf par *unless
 
 
