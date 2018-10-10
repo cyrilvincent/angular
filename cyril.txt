@@ -1,6 +1,2 @@
-Pour VSCode ajouter node_modules dans .get/info/exclude car .gitignore ne semble pas fonctionner correctement
-<<<<<<< HEAD
+﻿Pour VSCode ajouter node_modules dans .get/info/exclude car .gitignore ne semble pas fonctionner correctement
 Correction également disponible sur cyrilvincent.com/angular
-=======
-Correction également disponible sur cyrilvincent.com/angular
->>>>>>> e16aba06ae0984c8cbdd092c598816e2e2388f12
