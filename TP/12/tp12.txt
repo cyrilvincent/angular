@@ -8,7 +8,6 @@ Advanced components
 4/ Passer GameDetailComponent.game est une propriété Input
 5/ Inclure le composant game-detail dans le composant game en gérant le passage de paramètre
 6/ Dans la classe VideoGame ajouter l'attribut nbView: number = 0
-    Hélas, TS n'a pas encore un bon mécanisme de propriété par défaut, il fait modifier le mok pour ajouter nbView
 7/ Implémenter l'interface OnChanges dans GameDetailComponent
 8/ Incrémenter nbView à chaque Vue
     /!\ A cause de l'asynchronisme this.nbView peut être undefined

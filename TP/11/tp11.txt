@@ -6,4 +6,6 @@ Tests
 4/ Il ne devrait plus y avoir d'erreur car il n'y a plus aucun test !
 5/ Copier unittests.spec.ts dans ts/
 6/ Le test devrait être un succès
-7/ Tester media.ts
+7/ Tester VideoGame.getNetPrice() de media.ts, pourquoi le test est en échec
+8/ Modifier media.ts et ajouter export devant les classes à exporter
+9/ Tester le panier
