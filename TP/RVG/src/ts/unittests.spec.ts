@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import {VideoGame, Book, Cart} from './media';
+import {VideoGame, Book, Cart, Editor} from './media';
 
 describe('FirstSimpleTest', function () {
   let i = 1;
@@ -20,4 +20,11 @@ describe('Cart', function () {
   cart.add(book);
   cart.add(game);
   it('Net price', () => expect(cart.getTotalNetPrice()).toBe(22.5) );
+});
+
+describe('Editor', function () {
+  const editorName = 'ENI';
+  const editor: Editor = new Editor();
+  editor.name = editorName;
+  it('Name', () => expect(editor.name).toBe(editorName) );
 });
