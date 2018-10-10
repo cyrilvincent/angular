@@ -1,1 +1,2 @@
-Ajouter node_modules dans .get/info/exclude .gitignore ne semble pas fonctionner correctement
+Pour VSCode ajouter node_modules dans .get/info/exclude car .gitignore ne semble pas fonctionner correctement
+Correction également disponible sur cyrilvincent.com/angular
