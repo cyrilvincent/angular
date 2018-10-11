@@ -9,7 +9,7 @@ import { Location } from '@angular/common';
   templateUrl: './game-detail.component.html',
   styleUrls: ['./game-detail.component.css']
 })
-export class GameDetailComponent implements OnInit, OnChanges {
+export class GameDetailComponent implements OnInit {
 
   @Input() game: VideoGame;
   @Output() addedToCard = new EventEmitter<Cart>();
@@ -18,34 +18,32 @@ export class GameDetailComponent implements OnInit, OnChanges {
 
   ngOnInit() {
     this.getGame();
-    this.incrementNbView();
-  }
-
-  ngOnChanges() {
-    // this.incrementNbView();
-  }
-
-  incrementNbView() {
-    if (this.game) {
-      this.gameService.incrementNbView(this.game);
-    }
   }
 
   addToCart() {
     console.log(`Add ${this.game.title} to the cart`);
-    const cart: Cart = this.gameService.addToCart(this.game);
+    this.gameService.addToCart(this.game);
     // this.addedToCard.emit(cart); // Local upload event strategy, not working with <router-outlet>
-    this.gameService.emitChange(cart); // Shared Service event strategy
+    // this.gameService.emitChange(cart); // Shared Service event strategy
   }
 
   getGame(): void {
     const id = +this.route.snapshot.paramMap.get('id');
     this.gameService.getGame(id)
-        .subscribe(game => this.game = game);
+        .subscribe(game => {
+          this.game = game;
+          this.game.nbView += 1;
+          this.gameService.updateGame(this.game).subscribe();
+        });
   }
 
   goBack(): void {
     this.location.back();
+  }
+
+  save(): void {
+    this.gameService.updateGame(this.game)
+        .subscribe(() => this.goBack());
   }
 
 }

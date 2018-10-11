@@ -10,7 +10,7 @@ import {MessageService} from './message.service';
 })
 export class GameService {
 
-  ocart: Observable<Cart> = of(new Cart());
+  cart$: Observable<Cart> = of(new Cart());
 
   constructor(private messageService: MessageService) { }
 
@@ -22,7 +22,7 @@ export class GameService {
   addToCart(game: VideoGame): void {
     this.messageService.add('GameService: add ' + game.title + ' to cart');
     // this.cart.add(game);
-    this.ocart.pipe(
+    this.cart$.pipe(
       map(cart => cart.add(game))
     );
   }

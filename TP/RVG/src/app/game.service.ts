@@ -16,7 +16,7 @@ const httpOptions = {
 })
 export class GameService {
 
-  cart: Cart = new Cart();
+  private _cart: Cart = new Cart();
   emitChangeSource = new Subject<Cart>();
   changeEmitted$ = this.emitChangeSource.asObservable();
 
@@ -40,18 +40,14 @@ export class GameService {
     );
   }
 
-  getCart(): Observable<Cart> {
-    return of(this.cart);
+  get cart$(): Observable<Cart> {
+    return of(this._cart);
   }
 
-  addToCart(game: VideoGame): Cart {
+  addToCart(game: VideoGame): void {
     this.messageService.add('GameService: add ' + game.title + ' to cart');
-    this.cart.add(game);
-    return this.cart;
-  }
-
-  emitChange(change: Cart) {
-      this.emitChangeSource.next(change);
+    this._cart.add(game);
+    this.emitChangeSource.next(this._cart);
   }
 
   updateGame (game: VideoGame): Observable<any> {
