@@ -21,10 +21,8 @@ export class GameDetailComponent implements OnInit {
   }
 
   addToCart() {
-    console.log(`Add ${this.game.title} to the cart`);
     this.gameService.addToCart(this.game);
-    // this.addedToCard.emit(cart); // Local upload event strategy, not working with <router-outlet>
-    // this.gameService.emitChange(cart); // Shared Service event strategy
+    // this.addedToCard.emit(this.gameService._cart); // Local upload event strategy, not working with <router-outlet>
   }
 
   getGame(): void {
@@ -33,17 +31,10 @@ export class GameDetailComponent implements OnInit {
         .subscribe(game => {
           this.game = game;
           this.game.nbView += 1;
-          this.gameService.updateGame(this.game).subscribe();
         });
   }
 
   goBack(): void {
     this.location.back();
   }
-
-  save(): void {
-    this.gameService.updateGame(this.game)
-        .subscribe(() => this.goBack());
-  }
-
 }

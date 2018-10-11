@@ -21,10 +21,7 @@ export class GameDetailComponent implements OnInit {
   }
 
   addToCart() {
-    console.log(`Add ${this.game.title} to the cart`);
     const cart: Cart = this.gameService.addToCart(this.game);
-    // this.addedToCard.emit(cart); // Local upload event strategy, not working with <router-outlet>
-    this.gameService.emitChange(cart); // Shared Service event strategy
   }
 
   getGame(): void {

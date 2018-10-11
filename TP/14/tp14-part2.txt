@@ -1,4 +1,4 @@
-RxJS part 2
+﻿RxJS part 2
 ===========
 1/ Dans GamesService ajouter import {Observable, of} from 'rxjs';
 2/ Changer la signature de GameService.getGames(): VideoGame[] => GameService.getGames(): Observable<VideoGame[]>
@@ -13,5 +13,3 @@ RxJS part 2
 10/ Injecter MessageService dans GameService (Service-in-Service)
 11/ Dans GameService.getGames ajouter this.messageService.add('GameService: fetched games');
 12/ Ajouter le composant Messages à la fin du composant App
-Bonus
-13/ Rendre le panier observable et ajouter des messages
