@@ -2,10 +2,10 @@ Advanced components
 ===================
 1/ Générer le composant game-detail (sans s)
     /!\ ng generate component game --module app
-    L'option --module signifie qui est le module principal car il y en a 2 à la racine à cause de material
+    L'option --module signifie qui est le module principal car il y en a désormais 2 à la racine: app et material
 2/ Migrer le code game -> game-detail
-3/ Dans game-detail l'attribut du jeux en cours s'appel game, modifier le template en conséquence
-4/ Passer GameDetailComponent.game est une propriété Input
+3/ Créer l'attribut GameDetailComponent.game
+4/ Dans game-detail, modifier le template en conséquence de l'attribut game créé précédement
 5/ Inclure le composant game-detail dans le composant game en gérant le passage de paramètre
 6/ Dans la classe VideoGame ajouter l'attribut nbView: number = 0
 7/ Implémenter l'interface OnChanges dans GameDetailComponent

@@ -5,4 +5,5 @@ export class VideoGame {
     year: number;
     consoles: string[];
     play: string;
+    nbView: number = 0;
 }

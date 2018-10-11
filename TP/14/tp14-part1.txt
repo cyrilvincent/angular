@@ -1,22 +1,19 @@
 RxJS part 1
 ===========
-1/ Copier react.ts dans ts/
-    ts-node ne sait pas recompiler du ts contenu dans node-modules contrairement à Angular
-    Pour utiliser ce code dans ts-node il faut utiliser require (code JS)
-    Pour utiliser ce code dans Angular il faut utiliser import (code TS)
-2/ Créer un observateur sur le chiffre 45
-3/ Souscrire cet observateur en affichant sa valeur
-4/ Créer un nouvel observateur sur le chiffre 45
+1/ Copier react.spec.ts dans ts/
+2/ Dans un test, créer un observateur sur le chiffre 45
+3/ Souscrire cet observateur en affichant et testant sa valeur
+4/ Dans un test, créer un nouvel observateur sur le chiffre 45
 5/ Créer un pipe sur cet observateur qui effectue les tâches suivante :
     - Affiche la valeur
     - Incrémente la valeur de 1
     - Affiche la valeur après modification
-6/ Souscrire cet observateur en affichant sa valeur
-7/ Créer le tableau suivant : var tab = [1,2,3];
+6/ Souscrire cet observateur en testant sa valeur
+7/ Dans un test, créer le tableau suivant : var tab = [1,2,3];
 8/ Créer un observateur sur tab
 9/ Appliquer un map qui incrémente les valeurs de 1
 10/ Souscrire en affichant le contenu du tableau
-11/ Créer le tableau suivant var tab2 = [1,2,3,4,5,6,7,8,9,10];
+11/ Dans un test, créer le tableau suivant var tab2 = [1,2,3,4,5,6,7,8,9,10];
 12/ Filtrer les chiffres pairs
 Bonus
 13/ Filtrer les nombres premiers
