@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, OnChanges } from '@angular/core';
 import { VideoGame } from '../video-game';
+import {GameService} from '../game.service';
 
 @Component({
   selector: 'app-game-detail',
@@ -10,7 +11,7 @@ export class GameDetailComponent implements OnInit, OnChanges {
 
   @Input() game: VideoGame;
 
-  constructor() { }
+  constructor(private gameService: GameService) { }
 
   ngOnInit() {
   }
@@ -19,6 +20,10 @@ export class GameDetailComponent implements OnInit, OnChanges {
     if (this.game) {
       this.game.nbView++;
     }
+  }
+
+  addToCart() {
+    this.gameService.addToCart(this.game);
   }
 
 }

@@ -1,4 +1,4 @@
-Mock Service
+REST Service
 ============
 1/ Installer InMemoryWebApi : npm install angular-in-memory-web-api --save
 2/ Copier in-memory-data.service.ts dans src/app/
@@ -38,9 +38,9 @@ Mock Service
         const id = +this.route.snapshot.paramMap.get('id');
         this.gameService.getGame(id)
             .subscribe(game => {
-            this.game = game;
-            this.game.nbView += 1;
-            this.gameService.updateGame(this.game).subscribe();
+                this.game = game;
+                this.game.nbView += 1;
+                this.gameService.updateGame(this.game).subscribe();
             });
     }
 16/ Tester, le dashboard ne fonctionne plus correctement car il n'est pas branché au service

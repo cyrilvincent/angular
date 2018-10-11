@@ -92,5 +92,4 @@ FACULTATIF
     }
 30/ Dans app.component.html modifier <app-cart [cart]="{{cart}}">
 31/ Dans CartComponent rendre l'attribut cart @input
-    C'est assez complexe !
 
