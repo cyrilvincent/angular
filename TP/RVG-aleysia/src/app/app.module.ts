@@ -8,6 +8,15 @@ import { GamesComponent } from './games/games.component';
 import { GameDetailComponent } from './game-detail/game-detail.component';
 import { CartComponent } from './cart/cart.component';
 import { MessagesComponent } from './messages/messages.component';
+import { AppRoutingModule } from './/app-routing.module';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { InMemoryDataService } from './in-memory-data.service';
+import { GameCreateComponent } from './game-create/game-create.component';
+import { GamesSearchComponent } from './games-search/games-search.component';
+import { environment } from '../environments/environment';
+import { HttpErrorInterceptor } from './request-interceptor';
 
 @NgModule({
   declarations: [
@@ -16,14 +25,37 @@ import { MessagesComponent } from './messages/messages.component';
     GameDetailComponent,
     CartComponent,
     MessagesComponent,
+    DashboardComponent,
+    GameCreateComponent,
+    GamesSearchComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     BrowserAnimationsModule,
     MaterialModule,
+    AppRoutingModule,
+    HttpClientModule,
+    environment.production ? [] : HttpClientInMemoryWebApiModule.forRoot(
+        InMemoryDataService, { dataEncapsulation: false }
+      )
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: HttpErrorInterceptor,
+      multi: true,
+    }
+  ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+
+export class AppModule {
+
+  InMemoryWebApiForRoot(): any {
+    HttpClientInMemoryWebApiModule.forRoot(
+      InMemoryDataService, { dataEncapsulation: false }
+    );
+  }
+
+ }
