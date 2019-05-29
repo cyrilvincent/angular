@@ -1,2 +1,2 @@
-http://cyrilvincent.com/angular/RVG/games
+http://cyrilvincent.com/angular/RVG
 https://github.com/cyrilvincent/angular
