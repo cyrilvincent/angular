@@ -1,4 +1,4 @@
-Cordova
+﻿cCordova
 =======
 1/ Installer cordova : npm install -g cordova
 2/ taper cordova -v
@@ -29,6 +29,7 @@ Cordova
 17/ Modifier la la ligne <base href="."> (peut être effectué avec ng build)
 18/ Tester sur Android
 19/ Installer le sur votre téléphone
+20/ Bonus : porter un site Web de votre choix sur Android (voir CVC/cyril.txt)
 
 
 
