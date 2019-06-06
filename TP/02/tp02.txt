@@ -5,15 +5,16 @@ Install
 3/ Installer Angular CLI : npm install -g @angular/cli
 4/ Taper ng version
 5/ Créer le projet RVG (Retro VideoGame) : ng new RVG
+    Choisir les valeurs par défaut
 6/ Inspecter les fichiers crées
 7/ Démarrer le projet : ng serve --open
 8/ Arreter le serveur avec Control+C
 9/ Tester ng build et aller voir le répertoire dist/RVG
 10/ Tester ng build --prod --output-path=dist/prod  et aller voir le code généré
-11/ Ouvrir une ligne de commande dans le répertoire python-server
-12/ Exécuter tiny \absolutepath\dist\rvg 
+Bonus
+11/ Exécuter tiny \absolutepath\dist\rvg 
     Par exemple tiny D:\CVC\Formation\JS\Angular\GIT\TP\RVG\dist\RVG 
     tiny est un micro serveur web
-13/ Tester localhost
-14/ Faire de même avec le répertoire /dist/prod
-15/ Pour arrêter Tiny taskkill /F /IM tiny.exe
+12/ Tester localhost
+13/ Faire de même avec le répertoire /dist/prod
+14/ Pour arrêter Tiny: taskkill /F /IM tiny.exe

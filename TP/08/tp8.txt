@@ -1,11 +1,11 @@
 Material
 ========
 1/ Intaller material : npm install --save @angular/material @angular/cdk @angular/animations
-2/ Ajouter dans app-module.ts
+2/ Ajouter dans app.module.ts
     import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     BrowserAnimationsModule dans l'imports: []
 3/ Copier material.module.ts dans app
-4/ Ajouter dans app.module 
+4/ Ajouter dans app.module.ts
     import { MaterialModule } from './material.module';
     Et MaterialModule dans l'imports
 5/ Copier index.html et styles.css dans src

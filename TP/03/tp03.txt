@@ -2,7 +2,7 @@ Le Shell
 ========
 1/ Dans le composant app changer le titre en "Retro VideoGame"
 2/ Tester avec ng serve
-3/ Mettre à jour la CSS en copiant collant de code de todo.css
+3/ Mettre à jour la CSS du composant en copiant collant de code de todo.css
 4/ Tester
-5/ Ajouter un attribut de classe angular = 6
+5/ Ajouter un attribut de classe angular = 8
 6/ Afficher cet attribut en l'incrémentant de 1
