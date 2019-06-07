@@ -17,6 +17,7 @@ import { GameCreateComponent } from './game-create/game-create.component';
 import { GamesSearchComponent } from './games-search/games-search.component';
 import { environment } from '../environments/environment';
 import { HttpErrorInterceptor } from './request-interceptor';
+import { ServiceWorkerModule } from '@angular/service-worker';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { HttpErrorInterceptor } from './request-interceptor';
     HttpClientModule,
     environment.production ? [] : HttpClientInMemoryWebApiModule.forRoot(
         InMemoryDataService, { dataEncapsulation: false }
-      )
+      ),
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [
     {
