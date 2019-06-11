@@ -21,4 +21,8 @@ export class GamesComponent implements OnInit {
   onSelect(game: VideoGame): void {
     this.selectedGame = game;
   }
+
+  deleteGame(game: VideoGame): void {
+    this.games = this.games.filter(g => g.id !== game.id);
+  }
 }

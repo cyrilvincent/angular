@@ -1,4 +1,4 @@
-class Editor {
+export class Editor {
     id: number;
     name: string;
 }
@@ -17,6 +17,7 @@ interface IMedia  {
     authors: Array<Author>;
 }
 
+/* tslint:disable:variable-name */
 abstract class Media implements IMedia {
     private _id: number;
     private _title: string;
@@ -29,8 +30,6 @@ abstract class Media implements IMedia {
         this._title = title;
         this._price = price;
     }
-
-    // public constructor(private id:number, private title:string, private price:number) {}
 
     public abstract getNetPrice(): number;
 
@@ -50,7 +49,7 @@ abstract class Media implements IMedia {
     set authors(authors: Array<Author>) { this._authors = authors; }
 }
 
-class Book extends Media {
+export class Book extends Media {
     private _nbPage: number;
 
     public constructor(id: number, title: string, price: number = -1, nbPage: number = 0) {
@@ -66,7 +65,7 @@ class Book extends Media {
     }
 }
 
-class Cd extends Media {
+export class Cd extends Media {
     nbTrack: number;
 
     public getNetPrice(): number {
@@ -74,7 +73,7 @@ class Cd extends Media {
     }
 }
 
-class VideoGame extends Media {
+export class VideoGame extends Media {
     pegi: number;
 
     public getNetPrice(): number {
@@ -82,7 +81,7 @@ class VideoGame extends Media {
     }
 }
 
-class Cart {
+export class Cart {
 
     medias: Array<Media> = new Array<Media>();
 
@@ -99,7 +98,7 @@ class Cart {
     }
 }
 
-interface VideoGameTO {
+export interface VideoGameTO {
     id: number;
     title: string;
     editor: string;

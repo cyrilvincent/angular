@@ -3,7 +3,7 @@ Advanced components
 1/ Générer le composant game-detail (sans s)
     /!\ ng generate component game --module app
     L'option --module signifie qui est le module principal car il y en a désormais 2 à la racine: app et material
-2/ Migrer le code game -> game-detail
+2/ Migrer le code HTML du game dans game-detail
 3/ Créer l'attribut GameDetailComponent.game
 4/ Dans game-detail, modifier le template en conséquence de l'attribut game créé précédement
 5/ Inclure le composant game-detail dans le composant game en gérant le passage de paramètre
@@ -12,3 +12,7 @@ Advanced components
 8/ Incrémenter nbView à chaque Vue
     /!\ A cause de l'asynchronisme this.nbView peut être undefined
 9/ Afficher nbView
+10/ Créer l'attribut @Output deleteRequest
+11/ Créer le bouton delete qui appelle la méthode deleteGame
+12/ Binder deleteRequest dans le container parent et effacer le jeux
+13/ Bonus : mettre à jour les tests e2e

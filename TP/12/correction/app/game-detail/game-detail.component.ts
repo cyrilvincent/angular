@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, OnChanges } from '@angular/core';
+import { Component, OnInit, Input, OnChanges, Output, EventEmitter } from '@angular/core';
 import { VideoGame } from '../video-game';
 
 @Component({
@@ -9,6 +9,7 @@ import { VideoGame } from '../video-game';
 export class GameDetailComponent implements OnInit, OnChanges {
 
   @Input() game: VideoGame;
+  @Output() deleteRequest = new EventEmitter<VideoGame>();
 
   constructor() { }
 
@@ -19,6 +20,10 @@ export class GameDetailComponent implements OnInit, OnChanges {
     if (this.game) {
       this.game.nbView++;
     }
+  }
+
+  deleteGame() {
+    this.deleteRequest.emit(this.game);
   }
 
 }

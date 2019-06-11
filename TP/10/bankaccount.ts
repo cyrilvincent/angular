@@ -1,137 +1,135 @@
-namespace BankAccountEntities {
-    export interface IBankAccount {
-        id: number;
-        owner: Customer;
-        balance: number;
-        creationDate: Date;
-        transactions: Array<Transaction>;
+interface IBankAccount {
+    id: number;
+    owner: Customer;
+    balance: number;
+    creationDate: Date;
+    transactions: Array<Transaction>;
+}
+
+/* tslint:disable:variable-name */
+class BankAccount implements IBankAccount {
+    private static _accountCounter: 0;
+    private _id: number;
+    private _owner: Customer;
+    protected _balance: 0;
+    private _creationDate: Date = new Date();
+    private _transactions: Array<Transaction> = new Array<Transaction>();
+
+    static accountNumber(): number {
+        return BankAccount._accountCounter;
     }
 
-    export class BankAccount implements IBankAccount {
-        private static _accountCounter: 0;
-        private _id: number;
-        private _owner: Customer;
-        protected _balance: 0;
-        private _creationDate: Date = new Date();
-        private _transactions: Array<Transaction> = new Array<Transaction>();
-
-        static accountNumber(): number {
-            return BankAccount._accountCounter;
-        }
-
-        constructor(id: number, owner: Customer) {
-            this._id = id;
-            this._owner = owner;
-            BankAccount. _accountCounter++;
-        }
-
-        get transactions(): Array<Transaction> {
-            return this._transactions;
-        }
-
-        get id(): number {
-            return this._id;
-        }
-
-        get owner(): Customer {
-            return this._owner;
-        }
-
-        get creationDate(): Date {
-            return this._creationDate;
-        }
-
-        get balance(): number {
-            return this._balance;
-        }
-
-        deposit(amount: number) {
-            this._balance += amount;
-            this._transactions.push(new Transaction(0, new Date(), amount));
-        }
-
-        withdraw(amount: number) {
-            if (this._balance >= amount) {
-                this._balance -= amount;
-                this._transactions.push(new Transaction(0, new Date(), -amount));
-            } else {
-                throw new RangeError('Amount error');
-            }
-        }
-
-
+    constructor(id: number, owner: Customer) {
+        this._id = id;
+        this._owner = owner;
+        BankAccount. _accountCounter++;
     }
 
-    export class InterestBankAccount extends BankAccount {
-        private _interest: number;
+    get transactions(): Array<Transaction> {
+        return this._transactions;
+    }
 
-        constructor(id: number, owner: Customer, interest: number) {
-            super(id, owner);
-            this._interest = interest;
-        }
+    get id(): number {
+        return this._id;
+    }
 
-        get interest(): number {
-            return this._interest;
-        }
-        set interest(interest: number) {
-            this._interest = interest;
-        }
+    get owner(): Customer {
+        return this._owner;
+    }
 
-        get balance(): number {
-            return this._balance * (1 + this.interest);
+    get creationDate(): Date {
+        return this._creationDate;
+    }
+
+    get balance(): number {
+        return this._balance;
+    }
+
+    deposit(amount: number) {
+        this._balance += amount;
+        this._transactions.push(new Transaction(0, new Date(), amount));
+    }
+
+    withdraw(amount: number) {
+        if (this._balance >= amount) {
+            this._balance -= amount;
+            this._transactions.push(new Transaction(0, new Date(), -amount));
+        } else {
+            throw new RangeError('Amount error');
         }
     }
 
-    export class Customer {
-        constructor(private _id: number, private _firstName: string, private _lastName: string) {}
 
-        get id(): number {
-            return this._id;
-        }
+}
 
-        get firstName(): string {
-            return this._firstName;
-        }
-        set firstName(firstName: string) {
-            this._firstName = firstName;
-        }
+class InterestBankAccount extends BankAccount {
+    private _interest: number;
 
-        get lastName(): string {
-            return this._lastName;
-        }
-        set lastName(lastName: string) {
-            this._lastName = lastName;
-        }
+    constructor(id: number, owner: Customer, interest: number) {
+        super(id, owner);
+        this._interest = interest;
     }
 
-    export class Transaction {
-        constructor(
-            public id: number,
-            public date: Date,
-            public amount: number
-        ) {}
+    get interest(): number {
+        return this._interest;
+    }
+    set interest(interest: number) {
+        this._interest = interest;
     }
 
-    export interface Bank {
-        id: number;
-        name: string;
-        accounts: Array<BankAccount>;
+    get balance(): number {
+        return this._balance * (1 + this.interest);
     }
 }
 
+class Customer {
+    constructor(private _id: number, private _firstName: string, private _lastName: string) {}
+
+    get id(): number {
+        return this._id;
+    }
+
+    get firstName(): string {
+        return this._firstName;
+    }
+    set firstName(firstName: string) {
+        this._firstName = firstName;
+    }
+
+    get lastName(): string {
+        return this._lastName;
+    }
+    set lastName(lastName: string) {
+        this._lastName = lastName;
+    }
+}
+
+class Transaction {
+    constructor(
+        public id: number,
+        public date: Date,
+        public amount: number
+    ) {}
+}
+
+interface Bank {
+    id: number;
+    name: string;
+    accounts: Array<BankAccount>;
+}
+
 console.log('BankAccount');
-import bae = BankAccountEntities;
-let cust: bae.Customer = new bae.Customer(1, 'Cyril', 'Vincent');
-let ba: bae.BankAccount = new bae.BankAccount(1, cust);
+let cust: Customer = new Customer(1, 'Cyril', 'Vincent');
+let ba: BankAccount = new BankAccount(1, cust);
 ba.deposit(1000);
 ba.withdraw(500);
 console.log(ba);
-let iba: bae.InterestBankAccount = new bae.InterestBankAccount(1, cust , 0.01);
+let iba: InterestBankAccount = new InterestBankAccount(1, cust , 0.01);
 iba.deposit(1000);
 console.log(iba);
-let b: bae.Bank = {
+let b: Bank = {
     id: 1,
     name: 'EuroBank',
-    accounts: [new bae.BankAccount(1, cust), new bae.BankAccount(2, cust)]
+    accounts: [new BankAccount(1, cust), new BankAccount(2, cust)]
 };
 console.log(b);

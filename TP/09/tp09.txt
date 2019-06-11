@@ -16,7 +16,6 @@ Directives
 14/ Afficher l'image du jeux dans la partie détail
     <img mat-card-image src="TODO">
 15/ Ajouter un hyperlien pour jouer au jeux, utiliser <a href="TODO" target="_blank">
-16/ Bonus : Créer la directive d'attribut highlight, inutile avec Material
-17/ Bonus : Créer la directive structurelle Unless et changer le *ngIf par *unless
-
+16/ Bonus : Créer la directive structurelle Unless et changer le *ngIf par *unless
+17/ Bonus : Créer la directive d'attribut highlight, inutile avec Material
 
