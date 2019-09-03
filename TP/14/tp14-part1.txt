@@ -2,6 +2,7 @@ RxJS part 1
 ===========
 1/ Copier react.spec.ts dans ts/
 2/ Dans un test, créer un observateur sur le chiffre 45
+    tips : créer un test fdescribe au lieu de describe pour focuser le test sur ce dernier
 3/ Souscrire cet observateur en affichant et testant sa valeur
 4/ Dans un test, créer un nouvel observateur sur le chiffre 45
 5/ Créer un pipe sur cet observateur qui effectue les tâches suivante :
@@ -16,6 +17,8 @@ RxJS part 1
 11/ Dans un test, créer le tableau suivant var tab2 = [1,2,3,4,5,6,7,8,9,10];
 12/ Filtrer les chiffres pairs
 Bonus
-13/ Filtrer les nombres premiers
+13/ Effectuer un reduce sur la somme des éléments d'un tableau
+14/ Effectuer un zip sur 2 listes
+15/ Filtrer les nombres premiers
 
 /!\ Il faut ensuite passer à tp14-part2

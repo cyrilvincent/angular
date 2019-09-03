@@ -2,10 +2,10 @@ Real REST Service
 =================
 0/ Prérequis
     Python 3.6+ avec python dans le path
-    python -m install flask
-    python -m install flask-cors
+    python -m pip install flask
+    python -m pip install flask-cors
 1/ Ouvrir python-server/python-rest-server.py et inspecter le fichier
-2/ Démarrer le serveur avec python python-rest-server.py
+2/ Démarrer le serveur avec la commande python python-rest-server.py
 3/ Ouvrir l'URL http://localhost:5000
 4/ Tester les URLs
 5/ Dans app.module ajouter import { environment } from '../environments/environment';
