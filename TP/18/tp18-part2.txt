@@ -40,7 +40,6 @@ Real REST Service
 18/ Exécuter http-server -p 8080 -c-1 dist/prod 
     http-server est à installer avec npm install http-server -g
 19/ Tester localhost
-20/ Faire de même avec le répertoire /dist/prod
 
 
 

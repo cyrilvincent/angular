@@ -60,7 +60,7 @@
     }
 13/ Dans le composant App injecter LogUpdateService
 14/ Dans le composant App injecter UpdateService
-15/ Le TP sera testé dans le chapitre suivant
+15/ PWA est incompatible avec ng serve, nous le testerons le chapitre suivant
 
 
 
