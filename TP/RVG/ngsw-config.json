@@ -24,5 +24,16 @@
         ]
       }
     }
-  ]
+  ],
+  "dataGroups": [{
+    "name": "tasks-users-api",
+    "urls": ["http://localhost:5000/games"],
+    "cacheConfig": {
+      "strategy": "freshness",
+      "maxSize": 20000,
+      "maxAge": "1h",
+      "timeout": "5s"
+    }
+  }]
+  
 }

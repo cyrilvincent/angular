@@ -37,20 +37,10 @@ Real REST Service
 15/ Tester ng build et aller voir le répertoire dist/RVG
 16/ Tester ng build --prod --output-path=dist/prod  et aller voir le code généré
 17/ Ouvrir une ligne de commande dans le répertoire python-server
-18/ Exécuter http-server -p 8080 -c-1 dist/rvg 
+18/ Exécuter http-server -p 8080 -c-1 dist/prod 
     http-server est à installer avec npm install http-server -g
 19/ Tester localhost
 20/ Faire de même avec le répertoire /dist/prod
-FACULTATIF
-21/ Gérer les erreurs avec un HTTPInterceptor en copiant request-interceptor.ts dans app/
-22/ Dans app.module.ts ajouter 
-    providers: [
-        {
-        provide: HTTP_INTERCEPTORS,
-        useClass: HttpErrorInterceptor,
-        multi: true,
-        }
-    ],
-23/ Tester en arretant le serveur
+
 
 
