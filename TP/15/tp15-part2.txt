@@ -54,37 +54,17 @@ ngOnInit() {
         this.gameService.getCart().subscribe(cart => this.nbElement = cart.games.length);
     }
 14/ Tester
-15/ L'autre méthode est vue à la fin du tp
-16/ Ouvrir le fichier angular.json à la racine du projet
-17/ Etudier le code suivant
-    "fileReplacements": [
-        {
-            "replace": "src/environments/environment.ts",
-            "with": "src/environments/environment.prod.ts"
-        }
-    ],
-18/ Ouvrir environments/environment.ts
-19/ Ajouter le code suivant
-        version: '0.1 DEV',
-        copyright: 'Votre nom',
-20/ Faire de même dans le fichier .prod en changeant DEV par PROD
-21/ Dans AppComponent importer import { environment } from '../environments/environment';
-22/ Créer l'attribut environment = environment
-23/ Afficher en bas de page la version, le copyright, et DEV si le logiciel est en développement
-24/ Tester avec ng serve puis ng serve --prod
-25/ Important, exécuter ng build --output-path=dist/RVG15
 FACULTATIF
-25/ L'autre méthode de synchronisation s'appelle Local Upload Event Strategy est plus "propre" mais elle est assez difficile dans les structures de composants complexes et ne marche pas pour un composant appeler directement depuis <router-outlet> ce qui est notre cas
-26/ Dans GameDetailComponent ajouter l'attribut @Output() addedToCard = new EventEmitter<Cart>();
-27/ Dans addToCart ajouter le code this.addedToCard.emit(cart);
-28/ Dans app.component.html ajouter <app-game-detail (addedToCart)="onAddedToCart($event)"></app-game-detail>
+15/ L'autre méthode de synchronisation s'appelle Local Upload Event Strategy est plus "propre" mais elle est assez difficile dans les structures de composants complexes et ne marche pas pour un composant appeler directement depuis <router-outlet> ce qui est notre cas
+16/ Dans GameDetailComponent ajouter l'attribut @Output() addedToCard = new EventEmitter<Cart>();
+17/ Dans addToCart ajouter le code this.addedToCard.emit(cart);
+18/ Dans app.component.html ajouter <app-game-detail (addedToCart)="onAddedToCart($event)"></app-game-detail>
     Ne marche pas avec <router-outlet>
-29/ Dans AppComponent ajouter la méthode
+19/ Dans AppComponent ajouter la méthode
     cart: Cart;
 
     addedToCart(cart: Cart) {
         this.cart = cart;
     }
-30/ Dans app.component.html modifier <app-cart [cart]="{{cart}}">
-31/ Dans CartComponent rendre l'attribut cart @input
-
+20/ Dans app.component.html modifier <app-cart [cart]="{{cart}}">
+21/ Dans CartComponent rendre l'attribut cart @input

@@ -1,0 +1,56 @@
+Real REST Service
+=================
+0/ Prérequis
+    Python 3.6+ avec python dans le path
+    python -m pip install flask
+    python -m pip install flask-cors
+1/ Ouvrir python-server/python-rest-server.py et inspecter le fichier
+2/ Démarrer le serveur avec la commande python python-rest-server.py
+3/ Ouvrir l'URL http://localhost:5000
+4/ Tester les URLs
+5/ Dans app.module ajouter import { environment } from '../environments/environment';
+6/ Changer la dernière ligne de la section imports
+    environment.production ? [] : HttpClientInMemoryWebApiModule.forRoot(
+        InMemoryDataService, { dataEncapsulation: false }
+      )
+7/ Dans environment.prod.ts ajouter gamesUrl: 'http://localhost:5000/games',
+8/ Tester avec ng serve --prod
+    Une erreur XSS apprait, pourquoi ?
+9/ Dans index.html modifier la ligne 9 comme suit
+    default-src 'self' http://localhost:5000 'unsafe-inline' 'unsafe-eval'
+10/ Tester
+11/ Ouvrir un nouvel onglet sur http://localhost:5000/games et vérifier que les nbView sont bien incrémentés
+12/ Modifier des jeux et vérifier que la modification est bien portée sur le serveur
+    /!\ Search ne marche pas car l'URL en production n'est pas de la même forme
+13/ Modifier GameService.search :
+    searchGames(term: string): Observable<VideoGame[]> {
+        if (!term.trim()) {
+            return of([]);
+        }
+        if (environment.production) {
+            return this.http.get<VideoGame[]>(`${environment.gamesUrl}/search?q=${term}`);
+        } else {
+            return this.http.get<VideoGame[]>(`${environment.gamesUrl}/?title=${term}`);
+        }
+    }
+14/ Tester
+15/ Tester ng build et aller voir le répertoire dist/RVG
+16/ Tester ng build --prod --output-path=dist/prod  et aller voir le code généré
+17/ Ouvrir une ligne de commande dans le répertoire python-server
+18/ Exécuter http-server -p 8080 -c-1 dist/rvg 
+    http-server est à installer avec npm install http-server -g
+19/ Tester localhost
+20/ Faire de même avec le répertoire /dist/prod
+FACULTATIF
+21/ Gérer les erreurs avec un HTTPInterceptor en copiant request-interceptor.ts dans app/
+22/ Dans app.module.ts ajouter 
+    providers: [
+        {
+        provide: HTTP_INTERCEPTORS,
+        useClass: HttpErrorInterceptor,
+        multi: true,
+        }
+    ],
+23/ Tester en arretant le serveur
+
+

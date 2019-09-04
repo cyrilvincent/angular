@@ -1,6 +1,69 @@
 ﻿PWA
 ===
-1/ Passer l'application en PWA
+1/ Vérifier la présence de la balise noscript dans index.html
+2/ Le passage à HTTPS ne peut se faire que dans un environnement de production
+3/ Installer PWA : ng add @angular/pwa
+4/ Vérifier que le lien vers le manifeste a été ajouté dans index.html et tester
+5/ Ouvrir le manifeste et modifier le name en Retro VideoGame
+6/ Ajouter en fin de manifeste le code suivant :
+    "related_applications": [{
+        "platform": "web"
+    }, {
+        "platform": "play",
+        "url": "https://play.google.com/store/apps/details?id=votreid"
+    }]
+7/ Vérifier que le Service Worker SW a été ajouter dans AppModule
+8/ Ouvrir ngsw-config.json
+9/ Inspecter le WS dans Chrome via les DevTools
+10/ Créer le dans app pwa-services.ts qui contient le service suivant :
+    import { Injectable } from '@angular/core';
+    import { SwUpdate } from '@angular/service-worker';
+    import { interval } from 'rxjs';
+
+    @Injectable({
+        providedIn: 'root'
+    })
+    export class LogUpdateService {
+
+    constructor(updates: SwUpdate) {
+        updates.available.subscribe(event => {
+        console.log('current version is', event.current);
+        console.log('available version is', event.available);
+        });
+        updates.activated.subscribe(event => {
+        console.log('old version was', event.previous);
+        console.log('new version is', event.current);
+        });
+    }
+    }
+11/ Ajouter le service suivant dans pwa-services.ts
+    @Injectable({
+        providedIn: 'root'
+    })
+    export class UpdateService {
+
+        constructor(public updates: SwUpdate) {
+            if (updates.isEnabled) {
+            interval(6 * 60 * 60).subscribe(() => updates.checkForUpdate()
+                .then(() => console.log('checking for updates')));
+            }
+        }
+
+        public checkForUpdates(): void {
+            this.updates.available.subscribe(event => this.promptUser());
+        }
+
+        private promptUser(): void {
+            console.log('updating to new version');
+            this.updates.activateUpdate().then(() => document.location.reload());
+        }
+    }
+13/ Dans le composant App injecter LogUpdateService
+14/ Dans le composant App injecter UpdateService
+15/ Le TP sera testé dans le chapitre suivant
+
+
+
 
 
 

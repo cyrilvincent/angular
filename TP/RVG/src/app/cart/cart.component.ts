@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {Cart} from '../video-game';
 import {GameService} from '../game.service';
 import {MessageService} from '../message.service';
 
@@ -16,9 +15,9 @@ export class CartComponent implements OnInit {
               private messageService: MessageService) { }
 
   ngOnInit() {
-    // this.nbElement = this.gameService.cart.games.length;
-    this.messageService.add('Retrieve cart with ' + this.nbElement + ' elements');
-    this.gameService.cart$.subscribe(cart => this.nbElement = cart.games.length);
+    this.gameService.changeEmitted$.subscribe(
+      cart => this.nbElement = cart.games.length
+    );
   }
 
 }

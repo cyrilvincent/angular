@@ -1,0 +1,21 @@
+Environment
+===========
+1/ Ouvrir le fichier angular.json à la racine du projet
+2/ Etudier le code suivant
+    "fileReplacements": [
+        {
+            "replace": "src/environments/environment.ts",
+            "with": "src/environments/environment.prod.ts"
+        }
+    ],
+3/ Ouvrir environments/environment.ts
+4/ Ajouter le code suivant
+        version: '0.1 DEV',
+        copyright: 'Votre nom',
+5/ Faire de même dans le fichier .prod en changeant DEV par PROD
+6/ Dans AppComponent importer import { environment } from '../environments/environment';
+7/ Créer l'attribut environment = environment
+8/ Afficher en bas de page la version, le copyright, et DEV si le logiciel est en développement
+9/ Tester avec ng serve puis ng serve --prod
+    En production il y a des erreurs sur SW
+10/ Important, exécuter ng build --output-path=dist/RVG

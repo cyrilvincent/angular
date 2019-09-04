@@ -12,7 +12,7 @@ REST Service
     HttpClientInMemoryWebApiModule.forRoot(
       InMemoryDataService, { dataEncapsulation: false }
     )
-5/ Dans Environment ajouter la variable gamesUrl: 'api/games',
+5/ Dans environments/environment.ts ajouter la variable gamesUrl: 'api/games', dans la constante environment
 6/ Dans GameService ajouter
     import { HttpClient, HttpHeaders } from '@angular/common/http';
     import { environment } from '../environments/environment';
@@ -22,7 +22,7 @@ REST Service
     return this.http.get<VideoGame[]>(environment.gamesUrl);
 9/ Pourquoi la signature de la méthode ne change pas ?
 10/ Tester
-11/ Dans getGame mettre à jour le code pour l'URL api/games/1 pour l'id 1
+11/ Dans getGame mettre à jour le code pour l'URL en prenant pour exemple : api/games/1 pour l'id 1
 12/ Tester, remarquer l'asynchronisme, pourquoi nbView reste à 0 ?
 13/ Après les imports ajouter le code suivant:
     const httpOptions = {
@@ -52,7 +52,7 @@ REST Service
         );
     }
 18/ Tester
-19/ Dans game-detail.component.html ajouter à coté de l'input <button (click)="save()">save</button>
+19/ Dans game-detail.component.html ajouter à coté de l'input : <button (click)="save()">save</button>
 20/ Dans GameDetailComponent ajouter
     save(): void {
         this.gameService.updateGame(this.game)

@@ -7,7 +7,7 @@
         </mat-card-header>
           <div>
               <mat-form-field>
-                  <input matInput placeholder="title" [(ngModel)]="game.title">
+                  <input matInput placeholder="title" [(ngModel)]="game.title"> <button (click)="save()">save</button>
               </mat-form-field>
           </div>
           <div>
@@ -15,7 +15,7 @@
           </div>
           <div>
             <a (click)="addToCart()">
-              <i class="material-icons">
+              <i class="material-icons cart">
                 add_shopping_cart
               </i>
             </a>
@@ -34,4 +34,5 @@
           <pre>{{game | json}}</pre>
       </div>
   </ng-container>
+  <button (click)="goBack()">go back</button>
 </div>
