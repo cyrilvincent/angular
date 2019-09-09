@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {VideoGame} from '../video-game';
+import { VideoGame } from '../video-game';
+import { VIDEOGAMES } from '../mock-video-games';
 
 @Component({
   selector: 'app-games',
@@ -8,14 +9,20 @@ import {VideoGame} from '../video-game';
 })
 export class GamesComponent implements OnInit {
 
-  game: VideoGame = {
-    id: 1,
-    title: 'Space Invaders',
-  };
+  games = VIDEOGAMES;
+  selectedGame: VideoGame;
+
+  get selectedUrl(): string {
+    return 'assets/images/games/' + this.selectedGame.id;
+  }
+
 
   constructor() { }
 
   ngOnInit() {
   }
 
+  onSelect(game: VideoGame): void {
+    this.selectedGame = game;
+  }
 }

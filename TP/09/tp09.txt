@@ -1,10 +1,12 @@
 Directives
 ==========
 1/ Copier le fichier mock-video-games.ts dans app
-2/ Corriger les erreurs induites dans VideoGame
+2/ Ajouter dans le composant games import { VIDEOGAMES } from '../mock-video-games' et corriger les erreurs induites dans VideoGame
 3/ Dans games.component.ts affecter games = VIDEOGAMES après avoir fait l'import adéquat
 4/ Copier games.component.* dans app/games
 5/ Modifier le template games afin d'afficher la liste des jeux
+    Si une erreur apparait sur un composant mat-* not found
+    Il faut ajouter le module correspondant dans material.module.ts
 6/ Tester
 7/ Dans games.component.ts créer l'attribut selectedGame
 8/ Créer la méthode onSelect(game: TODO): void qui affecte game à selectedGame
