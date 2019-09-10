@@ -12,10 +12,6 @@ export class GamesComponent implements OnInit {
   games = VIDEOGAMES;
   selectedGame: VideoGame;
 
-  get selectedUrl(): string {
-    return 'assets/images/games/' + this.selectedGame.id;
-  }
-
 
   constructor() { }
 
@@ -24,5 +20,9 @@ export class GamesComponent implements OnInit {
 
   onSelect(game: VideoGame): void {
     this.selectedGame = game;
+  }
+
+  deleteGame(game: VideoGame): void {
+    this.games = this.games.filter(g => g.id !== game.id);
   }
 }

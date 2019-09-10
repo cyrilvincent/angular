@@ -47,26 +47,8 @@
     border-radius: 4px 0 0 4px;
   }
 
-#game-detail {
-  width: 65%;
-  margin-top: 2rem;
-}
-
-#game-detail img {
-  height: 100px;
-  object-fit: scale-down;
-  margin-top: 1rem;
-
-}
-
 button {
   display: block;
-}
-
-@media (max-width: 600px) {
-  #game-detail {
-    width: 90%;
-  }
 }
 
 #left {
@@ -91,19 +73,6 @@ button {
 
 .mat-list-text {
   text-align: left !important;
-}
-
-form {
-  display: grid;
-  width: 80%;
-}
-
-.mat-form-field {
-    width: 100%;
-}
-
-#games-json {
-  margin-top: 2rem;
 }
 
 @media (max-width: 680px) {

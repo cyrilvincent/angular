@@ -1,14 +1,24 @@
 Tests
 =====
-1/ Exécuter ng test et notez qu'il y a des erreurs dans les tests générés par Angular, pourquoi ?
-2/ Dans test.ts chercher la ligne  const context = require.context('./', true, /\.spec\.ts$/)
-3/ La remplacer par const context = require.context('./ts/', true, /\.spec\.ts$/)
-4/ Il ne devrait plus y avoir d'erreur car il n'y a plus aucun test !
-5/ Copier unittests.spec.ts dans ts/
+1/ Exécuter ng test et notez les erreurs sans les corriger
+2/ Dans app.component.spec.ts reprendre les declaration et imports de app/module.ts
+3/ Corriger app.component.spec.ts pour que le test e2e passe
+4/ Faire de même pour games.component.spec.ts
+5/ Copier unittests.spec.ts dans src/ts/
 6/ Le test devrait être un succès
 7/ Tester VideoGame.getNetPrice() de media.ts, pourquoi le test est en échec
 8/ Modifier media.ts et ajouter export devant les classes à exporter
 9/ Tester le panier
-10/ Dans app.component.spec.ts reprendre les declaration et imports de app/module.ts
-11/ Faire passer les tests
-12/ Créer et tester games.component.spec.ts
+10/ Dans app.component.spec.ts reprendre les declarations et imports de app/module.ts
+11/ Tester
+12/ Pour activer le debugger VS Code nistaller le plugin debugger for chrome
+13/ Ajouter dans /.vscode/launch.json la config suivante
+    {
+        "type": "chrome",
+        "request": "launch",
+        "name": "Launch Chrome against localhost",
+        "url": "http://localhost:4200",
+        "webRoot": "${workspaceFolder}"
+    }
+14/ Debugger avec le menu Déboguer ou F5
+

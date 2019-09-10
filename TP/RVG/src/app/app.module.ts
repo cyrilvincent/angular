@@ -5,13 +5,13 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { MaterialModule } from './material.module';
 import { AppComponent } from './app.component';
 import { GamesComponent } from './games/games.component';
-import { UnlessDirective } from './unless.directive';
+import { GameDetailComponent } from './game-detail/game-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     GamesComponent,
-    UnlessDirective,
+    GameDetailComponent,
   ],
   imports: [
     BrowserModule,
