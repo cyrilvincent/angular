@@ -14,6 +14,13 @@
             <img mat-card-image src="assets/images/games/{{game.id}}.png">
           </div>
           <div>
+            <a (click)="addToCart()">
+              <i class="material-icons">
+                add_shopping_cart
+              </i>
+            </a>
+          </div>
+          <div>
             Number of view: {{game.nbView}}
           </div>
           <div>
@@ -25,9 +32,6 @@
       </mat-card>
       <div id="game-json">
           <pre>{{game | json}}</pre>
-      </div>
-      <div>
-        <button (click)="deleteGame()">Delete</button>
       </div>
   </ng-container>
 </div>
