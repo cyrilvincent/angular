@@ -1,21 +1,23 @@
 ﻿PWA
 ===
-1/ Vérifier la présence de la balise noscript dans index.html
-2/ Le passage à HTTPS ne peut se faire que dans un environnement de production
-3/ Installer PWA : ng add @angular/pwa
-4/ Vérifier que le lien vers le manifeste a été ajouté dans index.html et tester
-5/ Ouvrir le manifeste et modifier le name en Retro VideoGame
-6/ Ajouter en fin de manifeste le code suivant :
+0/ Backuper votre projet en dupliquant le répertoire
+1/ Auditer le projet depuis Chrome
+2/ Vérifier la présence de la balise noscript dans index.html
+3/ Le passage à HTTPS ne peut se faire que dans un environnement de production
+4/ Installer PWA : ng add @angular/pwa
+5/ Vérifier que le lien vers le manifeste a été ajouté dans index.html et tester
+6/ Ouvrir le manifeste et modifier le name en Retro VideoGame
+7/ Ajouter en fin de manifeste le code suivant :
     "related_applications": [{
         "platform": "web"
     }, {
         "platform": "play",
         "url": "https://play.google.com/store/apps/details?id=votreid"
     }]
-7/ Vérifier que le Service Worker SW a été ajouter dans AppModule
-8/ Ouvrir ngsw-config.json
-9/ Inspecter le WS dans Chrome via les DevTools
-10/ Créer le dans app pwa-services.ts qui contient le service suivant :
+8/ Vérifier que le Service Worker SW a été ajouté dans AppModule
+9/ Ouvrir ngsw-config.json
+10/ Inspecter le SW dans Chrome via les DevTools
+11/ Créer le service pwa-services.ts qui contient le code suivant :
     import { Injectable } from '@angular/core';
     import { SwUpdate } from '@angular/service-worker';
     import { interval } from 'rxjs';
@@ -36,7 +38,7 @@
         });
     }
     }
-11/ Ajouter le service suivant dans pwa-services.ts
+12/ Ajouter le service suivant dans pwa-services.ts
     @Injectable({
         providedIn: 'root'
     })
@@ -44,7 +46,7 @@
 
         constructor(public updates: SwUpdate) {
             if (updates.isEnabled) {
-            interval(6 * 60 * 60).subscribe(() => updates.checkForUpdate()
+            interval(6 * 60 * 60 * 1000).subscribe(() => updates.checkForUpdate()
                 .then(() => console.log('checking for updates')));
             }
         }
