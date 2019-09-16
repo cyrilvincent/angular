@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {GameService} from '../game.service';
-import {MessageService} from '../message.service';
+import {GameService} from '../shared/game.service';
+import {MessageService} from '../shared/message.service';
 
 @Component({
   selector: 'app-cart',

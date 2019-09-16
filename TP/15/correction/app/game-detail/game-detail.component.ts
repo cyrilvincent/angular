@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, OnChanges, Output, EventEmitter } from '@angular/core';
-import { VideoGame, Cart } from '../video-game';
-import { GameService } from '../game.service';
+import { VideoGame, Cart } from '../shared/video-game';
+import { GameService } from '../shared/game.service';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 
