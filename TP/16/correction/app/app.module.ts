@@ -12,11 +12,10 @@ import { AppRoutingModule } from './/app-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { InMemoryDataService } from './in-memory-data.service';
+import { InMemoryDataService } from './shared/in-memory-data.service';
 import { GameCreateComponent } from './game-create/game-create.component';
 import { GamesSearchComponent } from './games-search/games-search.component';
 import { environment } from '../environments/environment';
-import { HttpErrorInterceptor } from './request-interceptor';
 
 @NgModule({
   declarations: [
@@ -39,13 +38,6 @@ import { HttpErrorInterceptor } from './request-interceptor';
     environment.production ? [] : HttpClientInMemoryWebApiModule.forRoot(
         InMemoryDataService, { dataEncapsulation: false }
       )
-  ],
-  providers: [
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: HttpErrorInterceptor,
-      multi: true,
-    }
   ],
   bootstrap: [AppComponent]
 })

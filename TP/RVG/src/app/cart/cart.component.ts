@@ -11,8 +11,7 @@ export class CartComponent implements OnInit {
 
   nbElement = 0;
 
-  constructor(private gameService: GameService,
-              private messageService: MessageService) { }
+  constructor(private gameService: GameService) { }
 
   ngOnInit() {
     this.gameService.changeEmitted$.subscribe(
