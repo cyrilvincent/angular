@@ -26,7 +26,7 @@
 14/ Copier le contenu de RVG/dist/RVG/* vers RVG-cordova/www/
 15/ Ouvrir index.html
 16/ Ajouter la ligne : <script type=”text/javascript” src=”cordova.js”></script>
-17/ Modifier la la ligne <base href="."> (peut être effectué avec ng build)
+17/ Modifier la ligne <base href="/"> en <base href="."> (peut être effectué avec ng build)
 18/ Tester sur Android
 19/ Installer le sur votre téléphone
 20/ Bonus : porter un site Web de votre choix sur Android (voir CVC/cyril.txt)

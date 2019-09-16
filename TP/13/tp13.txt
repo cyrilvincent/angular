@@ -3,12 +3,11 @@ Services
 1/ Créer le module shared
 2/ Déplacer video-game.ts et mock-video-games.ts dans shared
 3/ Corriger les erreurs d'import induites
-4/ Mettre à jour les imports exports du module
 5/ Générer le service game dans shared
-    A effectuer depuis le composant shared ou bien avec l'option --module=app.module.ts
-6/ Créer la méthode getGames() : VideoGame[] qui retourne VIDEOGAMES depuis mock-video-getGames
-7/ Dans le le composant games, importer et injecter le service créé
-8/ Changer la définition de games en games = VideoGame[]
+    A effectuer depuis le module shared ou bien avec l'option --module=shared.module.ts
+6/ Dans le service créer la méthode getGames() : VideoGame[] qui retourne VIDEOGAMES depuis mock-video-getGames
+7/ Dans le composant games, importer et injecter le service créé
+8/ Changer la définition de games en games : VideoGame[]
 9/ Créer la méthode getGames():void qui affecte à games le résultat de GameService.getGames()
 10/ Appeler getGames depuis ngOnInit()
 11/ Tester
@@ -24,4 +23,4 @@ Services
 14/ Dans le composant game-detail ajouter un lien pour ajouter le jeux au panier avec le code associé
 15/ Créer le composant cart qui affiche uniquement le nombre d'élément dans le panier
 16/ Afficher ce composant depuis le composant app
-17/ Pourquoi le compteur reste à zéro ?
+17/ Pourquoi le compteur reste à zéro ? (suivant la manière de coder)

@@ -1,7 +1,7 @@
 RxJS part 1
 ===========
 1/ Copier react.spec.ts dans ts/
-2/ Dans un test, créer un observateur sur le chiffre 45
+2/ Dans un test, créer un observable sur le chiffre 45
     tips : créer un test fdescribe au lieu de describe pour focuser le test sur ce dernier
 3/ Souscrire cet observateur en affichant et testant sa valeur
 4/ Dans un test, créer un nouvel observateur sur le chiffre 45

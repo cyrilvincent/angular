@@ -42,6 +42,46 @@ describe('FilterTest', () => {
     });
 });
 
+function* filterAsync(self, predicatfn) {
+    for (const elem of self) {
+        if (predicatfn(elem)) {
+            yield elem;
+        }
+    }
+}
+
+function* mapAsync(self, mapfn) {
+    for (const elem of self) {
+        yield mapfn(elem);
+    }
+}
+
+function* reduceAsync(self, reduceFn, initialValue = 0) {
+    let acc = initialValue;
+    for (const cur of self) {
+        acc = reduceFn(acc, cur)
+    }
+    return acc;
+}
+
+let res = filterAsync([1,2,3,4,5,6], (x) => x % 2 === 0 );
+let res2 = mapAsync(res, (x) => x * 10);
+for (const elem of res2) {
+    console.log(elem);
+}
+
+
+describe('FilterAndMapTest', () => {
+    const tab2 = [1, 2, 3, 4];
+    const otab2 = rx.from(tab2);
+    otab2.pipe(
+        op.filter((x: number) => x % 2 === 0),
+        op.map((x: number) => x * 10),
+    ).subscribe((x: number) => {
+        console.log(x);
+    });
+});
+
 describe('ListTest', () => {
     const tab1 = [1, 2, 3];
     let otab = rx.of(tab1);

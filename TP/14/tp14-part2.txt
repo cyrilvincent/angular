@@ -1,15 +1,13 @@
 ﻿RxJS part 2
 ===========
 1/ Dans GamesService ajouter import {Observable, of} from 'rxjs';
-2/ Changer la signature de GameService.getGames(): VideoGame[] => GameService.getGames(): Observable<VideoGame[]>
-3/ Créer un observateur cette méthode avec of
-4/ Dans GamesComponent modifier getGames avec le code suivant:
-    this.gameService.getGames().subscribe(games => this.games = games);
-5/ Tester
-6/ Créer un service message
-7/ Copier le contenu de message.service.ts du tp dans le message.service.ts généré
-8/ Créer le composant messages
-9/ Ecraser le répertoire messages généré par celui du tp
-10/ Injecter MessageService dans GameService (Service-in-Service)
-11/ Dans GameService.getGames ajouter this.messageService.add('GameService: fetched games');
-12/ Ajouter le composant Messages à la fin du composant App
+2/ Rendre GameService.getGames() observable avec la méthode of
+3/ Modifier GamesComponent pour souscrire l'observable:
+4/ Tester
+5/ Créer un service message
+6/ Copier le contenu de message.service.ts du tp dans le message.service.ts généré
+7/ Créer le composant messages
+8/ Ecraser le répertoire messages généré par celui du tp
+9/ Injecter MessageService dans GameService (Service-in-Service)
+10/ Dans GameService.getGames ajouter this.messageService.add('GameService: fetched games');
+11/ Ajouter le composant Messages à la fin du composant App

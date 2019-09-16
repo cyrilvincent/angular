@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, OnChanges } from '@angular/core';
 import { VideoGame } from '../shared/video-game';
-import { GameService } from '../shared/game.service';
+import {GameService} from '../shared/game.service';
 
 @Component({
   selector: 'app-game-detail',
@@ -23,7 +23,7 @@ export class GameDetailComponent implements OnInit, OnChanges {
   }
 
   addToCart() {
-    this.gameService.cart.add(this.game);
+    this.gameService.addToCart(this.game);
   }
 
 }
