@@ -16,6 +16,8 @@ import { InMemoryDataService } from './shared/in-memory-data.service';
 import { GameCreateComponent } from './game-create/game-create.component';
 import { GamesSearchComponent } from './games-search/games-search.component';
 import { environment } from '../environments/environment';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { UnlessDirective } from './unless.directive';
 
 @NgModule({
   declarations: [
@@ -27,6 +29,7 @@ import { environment } from '../environments/environment';
     DashboardComponent,
     GameCreateComponent,
     GamesSearchComponent,
+    UnlessDirective,
   ],
   imports: [
     BrowserModule,
@@ -37,7 +40,8 @@ import { environment } from '../environments/environment';
     HttpClientModule,
     environment.production ? [] : HttpClientInMemoryWebApiModule.forRoot(
         InMemoryDataService, { dataEncapsulation: false }
-      )
+      ),
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   bootstrap: [AppComponent]
 })

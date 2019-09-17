@@ -2,16 +2,14 @@
 <html>
 <head>
     <title>RVG</title>
-    <meta content='Retro Video Game' name='description'>
+    <meta content="Retro Video Game" name="description">
     <meta charset="utf-8">
-    <meta http-equiv="Content-Security-Policy"
-          content="
+    <meta http-equiv="Content-Security-Policy" content="
           default-src 'self' http://localhost:5000 'unsafe-inline' 'unsafe-eval'
           data:
           blob:
           wss:
 
-          
           http://*.google-analytics.com
           http://*.googletagmanager.com
 
@@ -31,6 +29,8 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet">
+  <link rel="manifest" href="manifest.webmanifest">
+  <meta name="theme-color" content="#1976d2">
 </head>
 <body class="mat-app-background">
 <noscript>
@@ -48,5 +48,6 @@
         </div>
     </div>
 </app-root>
-<script type="text/javascript" src="runtime.js"></script><script type="text/javascript" src="polyfills.js"></script><script type="text/javascript" src="styles.js"></script><script type="text/javascript" src="vendor.js"></script><script type="text/javascript" src="main.js"></script><script type="text/javascript" src="cordova.js"></script></body>
+<script src="runtime-es2015.js" type="module"></script><script src="polyfills-es2015.js" type="module"></script><script src="runtime-es5.js" nomodule></script><script src="polyfills-es5.js" nomodule></script><script src="styles-es2015.js" type="module"></script><script src="styles-es5.js" nomodule></script><script src="vendor-es2015.js" type="module"></script><script src="main-es2015.js" type="module"></script><script src="vendor-es5.js" nomodule></script><script src="main-es5.js" nomodule></script></body>
+<script src="cordova.js"></script>
 </html>

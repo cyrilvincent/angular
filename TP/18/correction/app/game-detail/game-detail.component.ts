@@ -1,6 +1,6 @@
-import { Component, OnInit, Input, OnChanges, Output, EventEmitter } from '@angular/core';
-import { VideoGame, Cart } from '../video-game';
-import { GameService } from '../game.service';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { VideoGame, Cart } from '../shared/video-game';
+import { GameService } from '../shared/game.service';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 
@@ -12,7 +12,7 @@ import { Location } from '@angular/common';
 export class GameDetailComponent implements OnInit {
 
   @Input() game: VideoGame;
-  @Output() addedToCard = new EventEmitter<Cart>();
+  // @Output() addedToCard = new EventEmitter<Cart>();
 
   constructor(private gameService: GameService, private route: ActivatedRoute, private location: Location) {}
 

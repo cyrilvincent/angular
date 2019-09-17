@@ -9,7 +9,7 @@ INJECTED from D:\CVC\Formation\JS\Angular\GIT\TP\RVG-cordova\platforms\android\a
 INJECTED from D:\CVC\Formation\JS\Angular\GIT\TP\RVG-cordova\platforms\android\app\src\main\AndroidManifest.xml:2:1-14:12
 INJECTED from D:\CVC\Formation\JS\Angular\GIT\TP\RVG-cordova\platforms\android\app\src\main\AndroidManifest.xml:2:1-14:12
 	package
-		ADDED from D:\CVC\Formation\JS\Angular\GIT\TP\RVG-cordova\platforms\android\app\src\main\AndroidManifest.xml:2:102-128
+		ADDED from D:\CVC\Formation\JS\Angular\GIT\TP\RVG-cordova\platforms\android\app\src\main\AndroidManifest.xml:2:102-127
 		INJECTED from D:\CVC\Formation\JS\Angular\GIT\TP\RVG-cordova\platforms\android\app\src\main\AndroidManifest.xml
 		INJECTED from D:\CVC\Formation\JS\Angular\GIT\TP\RVG-cordova\platforms\android\app\src\main\AndroidManifest.xml
 	android:versionName
@@ -19,7 +19,7 @@ INJECTED from D:\CVC\Formation\JS\Angular\GIT\TP\RVG-cordova\platforms\android\a
 	android:hardwareAccelerated
 		ADDED from D:\CVC\Formation\JS\Angular\GIT\TP\RVG-cordova\platforms\android\app\src\main\AndroidManifest.xml:2:11-45
 	xmlns:android
-		ADDED from D:\CVC\Formation\JS\Angular\GIT\TP\RVG-cordova\platforms\android\app\src\main\AndroidManifest.xml:2:129-187
+		ADDED from D:\CVC\Formation\JS\Angular\GIT\TP\RVG-cordova\platforms\android\app\src\main\AndroidManifest.xml:2:128-186
 	android:versionCode
 		ADDED from D:\CVC\Formation\JS\Angular\GIT\TP\RVG-cordova\platforms\android\app\src\main\AndroidManifest.xml:2:46-73
 		INJECTED from D:\CVC\Formation\JS\Angular\GIT\TP\RVG-cordova\platforms\android\app\src\main\AndroidManifest.xml
@@ -52,7 +52,7 @@ ADDED from D:\CVC\Formation\JS\Angular\GIT\TP\RVG-cordova\platforms\android\app\
 		ADDED from D:\CVC\Formation\JS\Angular\GIT\TP\RVG-cordova\platforms\android\app\src\main\AndroidManifest.xml:5:18-52
 	android:icon
 		ADDED from D:\CVC\Formation\JS\Angular\GIT\TP\RVG-cordova\platforms\android\app\src\main\AndroidManifest.xml:5:53-80
-activity#com.cyrilvincent.MainActivity
+activity#com.example.rvg.MainActivity
 ADDED from D:\CVC\Formation\JS\Angular\GIT\TP\RVG-cordova\platforms\android\app\src\main\AndroidManifest.xml:6:9-11:20
 	android:label
 		ADDED from D:\CVC\Formation\JS\Angular\GIT\TP\RVG-cordova\platforms\android\app\src\main\AndroidManifest.xml:6:97-134

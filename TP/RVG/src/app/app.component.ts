@@ -8,12 +8,12 @@ import { UpdateService, LogUpdateService } from './shared/pwa-services';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Retro VideoGame';
+  title = environment.title;
   environment = environment;
 
-  constructor(private logUpdateService: LogUpdateService,
-              private updateService: UpdateService
-    ) {}
+  constructor(private lus: LogUpdateService, private us: UpdateService) {
+    us.checkForUpdates();
+  }
 }
 
 

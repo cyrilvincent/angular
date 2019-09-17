@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { VideoGame } from '../video-game';
-import { GameService } from '../game.service';
+import { VideoGame } from '../shared/video-game';
+import { GameService } from '../shared/game.service';
 import { Location } from '@angular/common';
 
 @Component({
@@ -12,7 +12,8 @@ export class GameCreateComponent implements OnInit {
 
   game: VideoGame = new VideoGame();
 
-  constructor(private gameService: GameService, private location: Location) { }
+  constructor(private gameService: GameService,
+              private location: Location) { }
 
   ngOnInit() {
     this.game.year = 1970;

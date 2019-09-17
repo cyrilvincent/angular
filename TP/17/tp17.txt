@@ -61,7 +61,7 @@
         }
     }
 13/ Dans le composant App injecter LogUpdateService
-14/ Dans le composant App injecter UpdateService
+14/ Dans le composant App injecter UpdateService et appeler checkForUpdate()
 15/ PWA est incompatible avec ng serve, nous le testerons le chapitre suivant
 
 

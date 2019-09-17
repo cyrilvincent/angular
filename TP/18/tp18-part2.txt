@@ -15,7 +15,7 @@ Real REST Service
       )
 7/ Dans environment.prod.ts ajouter gamesUrl: 'http://localhost:5000/games',
 8/ Tester avec ng serve --prod
-    Une erreur XSS apprait, pourquoi ?
+    Une erreur XSS apparait, pourquoi ?
 9/ Dans index.html modifier la ligne 9 comme suit
     default-src 'self' http://localhost:5000 'unsafe-inline' 'unsafe-eval'
 10/ Tester
@@ -34,12 +34,24 @@ Real REST Service
         }
     }
 14/ Tester
-15/ Tester ng build et aller voir le répertoire dist/RVG
-16/ Tester ng build --prod --output-path=dist/prod  et aller voir le code généré
+15/ Tester ng build 
+16/ Tester ng build --prod --output-path=dist/RVG-prod
 17/ Ouvrir une ligne de commande dans le répertoire python-server
-18/ Exécuter http-server -p 8080 -c-1 dist/prod 
+18/ Exécuter http-server -p 8080 -c-1 dist/RVG-prod 
     http-server est à installer avec npm install http-server -g
 19/ Tester localhost
+20/ Dans le ngsw-config.json ajouter le datagroup
+"dataGroups": [{
+    "name": "tasks-users-api",
+    "urls": ["http://localhost:5000/games/**"],
+    "cacheConfig": {
+      "strategy": "freshness",
+      "maxSize": 200000,
+      "maxAge": "1h",
+      "timeout": "5s"
+    }
+  }]
+21/ Builder et tester
 
 
 

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { environment } from '../environments/environment';
-import { LogUpdateService, UpdateService } from './pwa-services';
+import { UpdateService, LogUpdateService } from './shared/pwa-services';
 
 @Component({
   selector: 'app-root',
@@ -11,7 +11,12 @@ export class AppComponent {
   title = 'Retro VideoGame';
   environment = environment;
 
-  constructor(private lus: LogUpdateService, private us: UpdateService) {
-    us.checkForUpdates();
-  }
+  constructor(private logUpdateService: LogUpdateService,
+              private updateService: UpdateService
+    ) {
+      updateService.checkForUpdates;
+    }
 }
+
+
+

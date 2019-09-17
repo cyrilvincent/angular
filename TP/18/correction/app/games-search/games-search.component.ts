@@ -1,12 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
- 
-import {
-   debounceTime, distinctUntilChanged, switchMap
- } from 'rxjs/operators';
- 
-import { VideoGame } from '../video-game';
-import { GameService } from '../game.service';
+import { debounceTime, distinctUntilChanged, switchMap } from 'rxjs/operators';
+import { VideoGame } from '../shared/video-game';
+import { GameService } from '../shared/game.service';
 
 @Component({
   selector: 'app-games-search',

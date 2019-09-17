@@ -4,8 +4,9 @@
 
 export const environment = {
   production: false,
-  version: '0.1',
+  version: '0.2',
   copyright: 'Cyril Vincent',
+  title: 'Retro VideoGame',
   gamesUrl: 'api/games',
 };
 

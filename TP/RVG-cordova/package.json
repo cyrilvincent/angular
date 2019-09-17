@@ -1,6 +1,6 @@
 {
-    "name": "com.cyrilvincent",
-    "displayName": "RVGMain",
+    "name": "com.example.rvg",
+    "displayName": "RVG",
     "version": "1.0.0",
     "description": "A sample Apache Cordova application that responds to the deviceready event.",
     "main": "index.js",
@@ -11,16 +11,16 @@
     "license": "Apache-2.0",
     "dependencies": {
         "cordova-android": "^7.0.0",
-        "cordova-browser": "^5.0.4",
-        "cordova-plugin-whitelist": "^1.3.3"
+        "cordova-ios": "^4.5.5",
+        "cordova-plugin-whitelist": "^1.3.4"
     },
     "cordova": {
         "plugins": {
             "cordova-plugin-whitelist": {}
         },
         "platforms": [
-            "browser",
-            "android"
+            "android",
+            "ios"
         ]
     }
 }
