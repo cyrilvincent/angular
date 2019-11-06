@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { VideoGame } from '../shared/video-game';
-import { GameService } from '../shared/game.service';
+import {VideoGame} from '../video-game';
 
 @Component({
   selector: 'app-games',
@@ -9,26 +8,14 @@ import { GameService } from '../shared/game.service';
 })
 export class GamesComponent implements OnInit {
 
-  games: VideoGame[];
-  selectedGame: VideoGame;
-  newGame: VideoGame = new VideoGame();
+  game: VideoGame = {
+    id: 1,
+    title: 'Space Invaders',
+  };
 
-  constructor(private gameService: GameService) {}
+  constructor() { }
 
   ngOnInit() {
-    this.getGames();
   }
 
-  onSelect(game: VideoGame): void {
-    this.selectedGame = game;
-  }
-
-  getGames(): void {
-    this.gameService.getGames().subscribe(games => this.games = games);
-  }
-
-  delete(game: VideoGame): void {
-    this.games = this.games.filter(g => g !== game);
-    this.gameService.deleteGame(game.id).subscribe();
-  }
 }

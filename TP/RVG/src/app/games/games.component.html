@@ -1,13 +1,10 @@
-<mat-list class="games">
-  <mat-list-item *ngFor="let game of games"
-    [class.selected]="game === selectedGame"
-    (click)="onSelect(game)">
-      <span class="badge">{{game.id}}</span>
-      <a routerLink="/detail/{{game.id}}">{{game.title}}</a>
-      <i class="material-icons" (click)="delete(game)">
-          delete
-        </i>
-  </mat-list-item>
-</mat-list>
-
+<div>{{game.id}}</div>
+<div>{{game.title | uppercase}}</div>
+<div>{{game | json}}</div>
+<div>
+  <label>Title:
+    <input [(ngModel)]="game.title" #title=ngModel placeholder="title" required>
+  </label>
+  <div *ngIf="title.errors?.required">Title is required</div>
+</div>
 

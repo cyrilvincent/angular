@@ -23,7 +23,7 @@
   },
 5/ Dans tsconfig.json modifier la target en es5 car electron utilise encore certaines librairies es5
 6/ Dans tsconfig.app.json modifier la section "types": ["node"]
-    Afin de puvoir retranspiler des types node.js
+    Afin de pouvoir retranspiler des types node.js
 Facultatif
 7/ Installer le packager 
   npm install electron-packager -g
