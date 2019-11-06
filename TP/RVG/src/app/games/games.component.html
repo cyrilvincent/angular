@@ -1,10 +1,18 @@
-<div>{{game.id}}</div>
-<div>{{game.title | uppercase}}</div>
-<div>{{game | json}}</div>
-<div>
-  <label>Title:
-    <input [(ngModel)]="game.title" #title=ngModel placeholder="title" required>
-  </label>
-  <div *ngIf="title.errors?.required">Title is required</div>
-</div>
+<h2>Video Games</h2>
 
+<ng-container>
+    <mat-card class="game-card">
+        <mat-card-header>
+          <mat-card-title>{{game.title | uppercase}}</mat-card-title>
+          <mat-card-subtitle>Id: {{game.id}}</mat-card-subtitle>
+        </mat-card-header>
+          <div>
+              <mat-form-field>
+                  <input matInput placeholder="title" [(ngModel)]="game.title">
+              </mat-form-field>
+          </div>
+      </mat-card>
+      <div id="game-json">
+          <pre>{{game | json}}</pre>
+      </div>
+  </ng-container>
