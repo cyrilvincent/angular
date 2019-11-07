@@ -1,7 +1,7 @@
 Advanced components
 ===================
 1/ Générer le composant game-detail (sans s)
-    /!\ ng generate component game --module app
+    /!\ ng generate component game-detail --module app
     L'option --module signifie qui est le module principal car il y en a désormais 2 à la racine: app et material
 2/ Migrer le code HTML du game dans game-detail
 3/ Créer l'attribut GameDetailComponent.game

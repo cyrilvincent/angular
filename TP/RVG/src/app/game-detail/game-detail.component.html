@@ -1,0 +1,33 @@
+<div id="game-detail" *ngIf="game">
+  <ng-container>
+    <mat-card class="game-card">
+        <mat-card-header>
+          <mat-card-title>{{game.title | uppercase}}</mat-card-title>
+          <mat-card-subtitle>Id: {{game.id}}</mat-card-subtitle>
+        </mat-card-header>
+          <div>
+              <mat-form-field>
+                  <input matInput placeholder="title" [(ngModel)]="game.title">
+              </mat-form-field>
+          </div>
+          <div>
+            <img mat-card-image src="assets/images/games/{{game.id}}.png">
+          </div>
+          <div>
+            Number of view: {{game.nbView}}
+          </div>
+          <div>
+              <a href="{{game.play}}" target="_blank">
+                Play the game!
+              </a>
+          </div>
+
+      </mat-card>
+      <div id="game-json">
+          <pre>{{game | json}}</pre>
+      </div>
+      <div>
+        <button (click)="deleteGame()">Delete</button>
+      </div>
+  </ng-container>
+</div>

@@ -1,18 +1,12 @@
 <h2>Video Games</h2>
 
-<ng-container>
-    <mat-card class="game-card">
-        <mat-card-header>
-          <mat-card-title>{{game.title | uppercase}}</mat-card-title>
-          <mat-card-subtitle>Id: {{game.id}}</mat-card-subtitle>
-        </mat-card-header>
-          <div>
-              <mat-form-field>
-                  <input matInput placeholder="title" [(ngModel)]="game.title">
-              </mat-form-field>
-          </div>
-      </mat-card>
-      <div id="game-json">
-          <pre>{{game | json}}</pre>
-      </div>
-  </ng-container>
+<mat-list class="games">
+  <mat-list-item *ngFor="let game of games"
+    [class.selected]="game === selectedGame"
+    (click)="onSelect(game)">
+    <span class="badge">{{game.id}}</span> {{game.title}}
+  </mat-list-item>
+</mat-list>
+
+<app-game-detail [game]="selectedGame" (deleteRequest)="deleteGame($event)"></app-game-detail>
+

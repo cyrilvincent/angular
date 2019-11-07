@@ -11,7 +11,7 @@ Tests
 9/ Tester le panier
 10/ Dans app.component.spec.ts reprendre les declarations et imports de app/module.ts
 11/ Tester
-12/ Pour activer le debugger VS Code nistaller le plugin debugger for chrome
+12/ Pour activer le debugger VS Code installer le plugin debugger for chrome
 13/ Ajouter dans /.vscode/launch.json la config suivante
     {
         "type": "chrome",
