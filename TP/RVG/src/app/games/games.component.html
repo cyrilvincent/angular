@@ -4,7 +4,10 @@
     (click)="onSelect(game)">
       <span class="badge">{{game.id}}</span>
       <a routerLink="/detail/{{game.id}}">{{game.title}}</a>
-    
+      <i class="material-icons" (click)="delete(game)">
+          delete
+        </i>
   </mat-list-item>
 </mat-list>
+
 

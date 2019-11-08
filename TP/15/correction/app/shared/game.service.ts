@@ -10,14 +10,14 @@ import {MessageService} from './message.service';
 })
 export class GameService {
 
-  private _cart: Cart = new Cart();
+  private cart: Cart = new Cart();
   emitChangeSource = new Subject<Cart>();
   changeEmitted$ = this.emitChangeSource.asObservable();
 
   constructor(private messageService: MessageService) { }
 
   get cart$(): Observable<Cart> {
-    return of(this._cart);
+    return of(this.cart);
   }
 
   getGames(): Observable<VideoGame[]> {
@@ -43,7 +43,7 @@ export class GameService {
 
   addToCart(game: VideoGame): void {
     this.messageService.add('GameService: add ' + game.title + ' to cart');
-    this._cart.add(game);
-    this.emitChangeSource.next(this._cart);
+    this.cart.add(game);
+    this.emitChangeSource.next(this.cart);
   }
 }

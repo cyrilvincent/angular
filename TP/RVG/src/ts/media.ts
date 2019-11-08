@@ -18,6 +18,7 @@ interface IMedia  {
 }
 
 abstract class Media implements IMedia {
+    // tslint:disable: variable-name
     private _id: number;
     private _title: string;
     private _price: number;

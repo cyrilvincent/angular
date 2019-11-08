@@ -24,7 +24,7 @@ REST Service
 10/ Tester
 11/ Dans getGame mettre à jour le code pour l'URL en prenant pour exemple : api/games/1 pour l'id 1
 12/ Tester, remarquer l'asynchronisme, pourquoi nbView reste à 0 ?
-13/ Après les imports ajouter le code suivant:
+13/ Dans GameService ajouter le code suivant:
     const httpOptions = {
         headers: new HttpHeaders({ 'Content-Type': 'application/json' })
     };

@@ -8,12 +8,12 @@ Components Event
             console.log(game.title + ' added to cart');
         }
     }
-2/ Dans GameService créer l'attribut privé _cart :
-    private _cart: Cart = new Cart();
+2/ Dans GameService créer l'attribut privé cart :
+    private cart: Cart = new Cart();
     
 3/ Ajouter cette propriété et méthode :
     get cart$(): Observable<Cart> {
-        return of(this._cart);
+        return of(this.cart);
     }
 
     addToCart(game: VideoGame): void {
@@ -40,7 +40,7 @@ Components Event
     emitChangeSource = new Subject<Cart>();
     changeEmitted$ = this.emitChangeSource.asObservable();
 12/ Dans GameDetailComponent.addToCart ajouter à la fin
-        this.emitChangeSource.next(this._cart); // Shared Service event strategy
+        this.emitChangeSource.next(this.cart); // Shared Service event strategy
 13/ Dans CartComponent modifier vore code pour obtenir
 ngOnInit() {
     this.getCart();
