@@ -7,6 +7,9 @@ import { AppComponent } from './app.component';
 import { GamesComponent } from './games/games.component';
 import { GameDetailComponent } from './game-detail/game-detail.component';
 import { CartComponent } from './cart/cart.component';
+import { MessagesComponent } from './messages/messages.component';
+import { AppRoutingModule } from './/app-routing.module';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -14,12 +17,15 @@ import { CartComponent } from './cart/cart.component';
     GamesComponent,
     GameDetailComponent,
     CartComponent,
+    MessagesComponent,
+    DashboardComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     BrowserAnimationsModule,
     MaterialModule,
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
