@@ -7,7 +7,7 @@ Services
     A effectuer depuis le module shared ou bien avec l'option --module=shared.module.ts
 6/ Dans le service créer la méthode getGames() : VideoGame[] qui retourne VIDEOGAMES depuis mock-video-getGames
 7/ Dans le composant games, importer et injecter le service créé
-8/ Changer la définition de games en games : VideoGame[]
+8/ Changer la définition de l'attribut games en games : VideoGame[]
 9/ Créer la méthode getGames():void qui affecte à games le résultat de GameService.getGames()
 10/ Appeler getGames depuis ngOnInit()
 11/ Tester
@@ -15,7 +15,7 @@ Services
     export class Cart {
         games: VideoGame[] = [];
         add(game: VideoGame): void {
-            this.games.push(m);
+            this.games.push(game);
             console.log(game.title + ' added to cart');
         }
     }
@@ -24,3 +24,4 @@ Services
 15/ Créer le composant cart qui affiche uniquement le nombre d'élément dans le panier
 16/ Afficher ce composant depuis le composant app
 17/ Pourquoi le compteur reste à zéro ? (suivant la manière de coder)
+18/ Bonus : rendre la classe Cart injectable et l'injecter
