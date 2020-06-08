@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'RVG';
+  public title = 'Retro VideoGame';
+  public angular = 9;
 }
