@@ -1,5 +1,11 @@
 <div>{{game.id}}</div>
 <div>{{game.title | uppercase}}</div>
 <div>{{game | json}}</div>
-<input [(ngModel)]='game.title' required #title=ngModel>
+<div>
+
+  <label>Title:
+    <input [(ngModel)]="game.title" #model=ngModel required>
+  </label>
+  <div *ngIf="model.errors?.required">Title is required</div>
+</div>
 

@@ -3,8 +3,8 @@
 <div>{{game | json}}</div>
 <div>
   <label>Title:
-    <input [(ngModel)]="game.title" #title=ngModel placeholder="title" required>
+    <input [(ngModel)]="game.title" #model=ngModel placeholder="title" required>
   </label>
-  <div *ngIf="title.errors?.required">Title is required</div>
+  <div *ngIf="model.errors?.required">Title is required</div>
 </div>
 

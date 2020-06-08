@@ -4,11 +4,16 @@ let tab: number[] = [1, 5, 9, 12, 22, 53, 0, -1, -99, 99];
 for (const i of tab) {
     console.log(i);
 }
-let max: number = tab[0];
-for (let i = 1; i < tab.length; i++) {
-    if (tab[i] > max) {
-        max = tab[i];
+
+function max(tab: number[]): number {
+    let res: number = tab[0];
+    for (let i = 1; i < tab.length; i++) {
+        if (tab[i] > res) {
+            res = tab[i];
+        }
     }
+    return res;
 }
-console.log(max);
+
+console.log(max(tab));
 
