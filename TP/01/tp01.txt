@@ -1,6 +1,7 @@
-Introduction
+﻿Introduction
 ============
 1/ Les ressources dep TPs se trouvent sur https://github.com/cyrilvincent/angular
 2/ Installer et ouvrir VSCode
 3/ Créer une page HTML Hello World!
 4/ Installer Node.js
+5/ Installer les plugin VSCode suivant : Debugger for Chrome, TSLint, Angular snippets, npm (egamma)

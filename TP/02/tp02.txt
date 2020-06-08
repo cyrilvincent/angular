@@ -9,12 +9,13 @@ Install
 6/ Inspecter les fichiers crées
 7/ Démarrer le projet : ng serve --open
 8/ Arreter le serveur avec Control+C
+Bonus
 9/ Tester ng build et aller voir le répertoire dist/RVG
 10/ Tester ng build --prod --output-path=dist/prod  et aller voir le code généré
-Bonus
 11/ Exécuter tiny \absolutepath\dist\rvg 
     Par exemple tiny D:\CVC\Formation\JS\Angular\GIT\TP\RVG\dist\RVG 
     tiny est un micro serveur web
 12/ Tester localhost
 13/ Faire de même avec le répertoire /dist/prod
 14/ Pour arrêter Tiny: taskkill /F /IM tiny.exe
+15/ Créer un launch.json depuis VSCode
