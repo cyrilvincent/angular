@@ -1,6 +1,6 @@
 First Component
 ===============
-1/ Créer le composant games (/!\ avec un s à la fin)
+1/ Créer le composant games (/!\ avec un s à la fin) depuis le répertoire app
 2/ Inspecter son code
 3/ Ajouter une propriété game = "Space Invaders"
 4/ Afficher game dans le template
