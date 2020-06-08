@@ -7,8 +7,9 @@
     list-style-type: none;
     padding: 0;
     width: 15em;
+    
   }
-  .games li {
+  .games mat-list-item {
     cursor: pointer;
     position: relative;
     left: 0;
@@ -17,12 +18,14 @@
     padding: .3em 0;
     height: 1.6em;
     border-radius: 4px;
+    display: block;
+    width: 200px;
   }
-  .games li.selected:hover {
+  .games mat-list-item.selected:hover {
     background-color: #BBD8DC !important;
     color: white;
   }
-  .games li:hover {
+  .games mat-list-item:hover {
     color: #607D8B;
     background-color: #DDD;
     left: .1em;
@@ -39,8 +42,8 @@
     background-color: #607D8B;
     line-height: 1em;
     position: relative;
-    left: -1px;
-    top: -4px;
+    left: -16px;
+    top: 0px;
     height: 1.8em;
     margin-right: .8em;
     border-radius: 4px 0 0 4px;
@@ -51,6 +54,13 @@
   margin-top: 2rem;
 }
 
+#game-detail img {
+  height: 100px;
+  object-fit: scale-down;
+  margin-top: 1rem;
+
+}
+
 button {
   display: block;
 }
@@ -58,5 +68,56 @@ button {
 @media (max-width: 600px) {
   #game-detail {
     width: 90%;
+  }
+}
+
+#left {
+  width: 50%;
+  float: left;
+  margin-left: 6%;
+}
+
+#right {
+  margin-left: 50%;
+  text-align: center;
+  padding-right: 17%;
+}
+
+.clear {
+  clear: both;
+}
+
+.mat-list {
+  display: table;
+}
+
+.mat-list-text {
+  text-align: left !important;
+}
+
+form {
+  display: grid;
+  width: 80%;
+}
+
+.mat-form-field {
+    width: 100%;
+}
+
+#games-json {
+  margin-top: 2rem;
+}
+
+@media (max-width: 680px) {
+  #left {
+    width: 100%;
+    float: none;
+  }
+
+  #right {
+    margin: 1em auto 0;
+    width: 90%;
+    float: none;
+    padding: 0;
   }
 }

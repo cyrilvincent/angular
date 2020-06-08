@@ -1,11 +1,38 @@
-<div>{{game.id}}</div>
-<div>{{game.title | uppercase}}</div>
-<div>{{game | json}}</div>
-<div>
+<h2>Video Games</h2>
 
-  <label>Title:
-    <input [(ngModel)]="game.title" #model=ngModel required>
-  </label>
-  <div *ngIf="model.errors?.required">Title is required</div>
+<mat-list class="games">
+  <mat-list-item *ngFor="let game of games"
+    [class.selected]="game === selectedGame"
+    (click)="onSelect(game)">
+    <span class="badge">{{game.id}}</span> {{game.title}}
+  </mat-list-item>
+  <mat-divider></mat-divider>
+</mat-list>
+
+<div id="game-detail" *appUnless="!selectedGame">
+  <ng-container>
+    <mat-card class="game-card">
+        <mat-card-header>
+          <mat-card-title>{{selectedGame.title | uppercase}}</mat-card-title>
+          <mat-card-subtitle>Id: {{selectedGame.id}}</mat-card-subtitle>
+        </mat-card-header>
+          <div>
+              <mat-form-field>
+                  <input matInput placeholder="title" [(ngModel)]="selectedGame.title">
+              </mat-form-field>
+          </div>
+          <div>
+            <img mat-card-image src="./assets/images/games/{{selectedGame.id}}.png">
+          </div>
+          <div>
+              <a href="{{selectedGame.play}}" target="_blank">
+                Play the game!
+              </a>
+          </div>
+
+      </mat-card>
+      <div id="selectedGame-json">
+          <pre>{{selectedGame | json}}</pre>
+      </div>
+  </ng-container>
 </div>
-
