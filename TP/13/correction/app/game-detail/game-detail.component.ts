@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, OnChanges } from '@angular/core';
+import { Component, OnInit, Input, Output, OnChanges, EventEmitter } from '@angular/core';
 import { VideoGame } from '../shared/video-game';
 import { GameService } from '../shared/game.service';
 
@@ -10,6 +10,7 @@ import { GameService } from '../shared/game.service';
 export class GameDetailComponent implements OnInit, OnChanges {
 
   @Input() game: VideoGame;
+  @Output() deleteRequest = new EventEmitter<VideoGame>();
 
   constructor(private gameService: GameService) { }
 
@@ -24,6 +25,10 @@ export class GameDetailComponent implements OnInit, OnChanges {
 
   addToCart() {
     this.gameService.cart.add(this.game);
+  }
+
+  deleteGame() {
+    this.deleteRequest.emit(this.game);
   }
 
 }

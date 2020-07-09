@@ -3,8 +3,7 @@ Services
 1/ Créer le module shared
 2/ Déplacer video-game.ts et mock-video-games.ts dans shared
 3/ Corriger les erreurs d'import induites
-5/ Générer le service game dans shared
-    A effectuer depuis le module shared ou bien avec l'option --module=shared.module.ts
+5/ Générer le service game dans shared a effectuer depuis le dossier shared
 6/ Dans le service créer la méthode getGames() : VideoGame[] qui retourne VIDEOGAMES depuis mock-video-getGames
 7/ Dans le composant games, importer et injecter le service créé
 8/ Changer la définition de l'attribut games en games : VideoGame[]
@@ -24,4 +23,4 @@ Services
 15/ Créer le composant cart qui affiche uniquement le nombre d'élément dans le panier
 16/ Afficher ce composant depuis le composant app
 17/ Pourquoi le compteur reste à zéro ? (suivant la manière de coder)
-18/ Bonus : rendre la classe Cart injectable et l'injecter
+18/ Bonus : Porter le code du delete dans le service

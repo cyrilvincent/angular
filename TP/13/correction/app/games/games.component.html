@@ -1,5 +1,5 @@
 <h2>Video Games</h2>
-
+<app-cart></app-cart>
 <mat-list class="games">
   <mat-list-item *ngFor="let game of games"
     [class.selected]="game === selectedGame"
@@ -8,5 +8,5 @@
   </mat-list-item>
 </mat-list>
 
-<app-game-detail [game]="selectedGame"></app-game-detail>
+<app-game-detail [game]="selectedGame" (deleteRequest)="deleteGame($event)"></app-game-detail>
 
