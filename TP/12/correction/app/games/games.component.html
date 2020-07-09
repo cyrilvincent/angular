@@ -8,30 +8,4 @@
   </mat-list-item>
 </mat-list>
 
-<div id="game-detail" *appUnless="!selectedGame">
-  <ng-container>
-    <mat-card class="game-card">
-        <mat-card-header>
-          <mat-card-title>{{selectedGame.title | uppercase}}</mat-card-title>
-          <mat-card-subtitle>Id: {{selectedGame.id}}</mat-card-subtitle>
-        </mat-card-header>
-          <div>
-              <mat-form-field>
-                  <input matInput placeholder="title" [(ngModel)]="selectedGame.title">
-              </mat-form-field>
-          </div>
-          <div>
-            <img mat-card-image src="./assets/images/games/{{selectedGame.id}}.png">
-          </div>
-          <div>
-              <a href="{{selectedGame.play}}" target="_blank">
-                Play the game!
-              </a>
-          </div>
-
-      </mat-card>
-      <div id="selectedGame-json">
-          <pre>{{selectedGame | json}}</pre>
-      </div>
-  </ng-container>
-</div>
+<app-game-detail [game]="selectedGame" (deleteRequest)="deleteGame($event)"></app-game-detail>

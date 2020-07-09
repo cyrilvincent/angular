@@ -15,4 +15,4 @@ Advanced components
 10/ Créer l'attribut @Output deleteRequest
 11/ Créer le bouton delete qui appelle la méthode deleteGame
 12/ Binder deleteRequest dans le container parent et effacer le jeux
-13/ Bonus : mettre à jour les tests e2e
+
