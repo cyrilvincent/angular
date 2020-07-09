@@ -1,15 +1,16 @@
-class Editor {
+export class Editor {
     id: number;
     name: string;
 }
 
-interface Author {
-    id: number;
-    firstName: string;
-    lastName: string;
+export class Author {
+
+    public constructor(public id: number, public firstName: string, public lastName: string)
+    {}
+
 }
 
-interface IMedia  {
+export interface IMedia  {
     id: number;
     title: string;
     price: number;
@@ -17,6 +18,7 @@ interface IMedia  {
     authors: Array<Author>;
 }
 
+/* tslint:disable:variable-name */
 abstract class Media implements IMedia {
     private _id: number;
     private _title: string;
@@ -29,8 +31,6 @@ abstract class Media implements IMedia {
         this._title = title;
         this._price = price;
     }
-
-    // public constructor(private id:number, private title:string, private price:number) {}
 
     public abstract getNetPrice(): number;
 

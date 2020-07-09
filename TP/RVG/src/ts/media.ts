@@ -1,16 +1,16 @@
-class Editor {
+export class Editor {
     id: number;
     name: string;
 }
 
-class Author {
+export class Author {
 
     public constructor(public id: number, public firstName: string, public lastName: string)
     {}
 
 }
 
-interface IMedia  {
+export interface IMedia  {
     id: number;
     title: string;
     price: number;
@@ -50,7 +50,7 @@ abstract class Media implements IMedia {
     set authors(authors: Array<Author>) { this._authors = authors; }
 }
 
-class Book extends Media {
+export class Book extends Media {
     private _nbPage: number;
 
     public constructor(id: number, title: string, price: number = -1, nbPage: number = 0) {
@@ -66,7 +66,7 @@ class Book extends Media {
     }
 }
 
-class Cd extends Media {
+export class Cd extends Media {
     nbTrack: number;
 
     public getNetPrice(): number {
@@ -74,7 +74,7 @@ class Cd extends Media {
     }
 }
 
-class VideoGame extends Media {
+export class VideoGame extends Media {
     pegi: number;
 
     public getNetPrice(): number {
@@ -82,7 +82,7 @@ class VideoGame extends Media {
     }
 }
 
-class Cart {
+export class Cart {
 
     medias: Array<Media> = new Array<Media>();
 
@@ -99,7 +99,7 @@ class Cart {
     }
 }
 
-interface VideoGameTO {
+export interface VideoGameTO {
     id: number;
     title: string;
     editor: string;
