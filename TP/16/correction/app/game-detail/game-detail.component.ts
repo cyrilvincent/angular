@@ -1,7 +1,7 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, OnChanges, EventEmitter } from '@angular/core';
 import { VideoGame, Cart } from '../shared/video-game';
 import { GameService } from '../shared/game.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Location } from '@angular/common';
 
 @Component({
@@ -12,19 +12,12 @@ import { Location } from '@angular/common';
 export class GameDetailComponent implements OnInit {
 
   @Input() game: VideoGame;
-  // @Output() addedToCard = new EventEmitter<Cart>();
+  @Output() addedToCard = new EventEmitter<Cart>();
 
-  constructor(private gameService: GameService, private route: ActivatedRoute, private location: Location) {}
+  constructor(private gameService: GameService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
     this.getGame();
-  }
-
-  addToCart() {
-    console.log(`Add ${this.game.title} to the cart`);
-    this.gameService.addToCart(this.game);
-    // this.addedToCard.emit(cart); // Local upload event strategy, not working with <router-outlet>
-    // this.gameService.emitChange(cart); // Shared Service event strategy
   }
 
   getGame(): void {
@@ -37,8 +30,17 @@ export class GameDetailComponent implements OnInit {
         });
   }
 
+  addToCart() {
+    this.gameService.addToCart(this.game);
+  }
+
+  deleteGame() {
+    this.gameService.deleteGame(this.game.id);
+    this.goBack();
+  }
+
   goBack(): void {
-    this.location.back();
+    this.router.navigate(['/games']);
   }
 
   save(): void {

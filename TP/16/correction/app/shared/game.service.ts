@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import {VIDEOGAMES} from './mock-video-games';
 import {VideoGame, Cart} from './video-game';
-import {Observable, of, Subject} from 'rxjs';
-import {map, tap} from 'rxjs/operators'
+import {Observable, of, from, Subject} from 'rxjs';
+import {map, filter} from 'rxjs/operators';
 import {MessageService} from './message.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from '../../environments/environment';
@@ -16,27 +16,25 @@ const httpOptions = {
 })
 export class GameService {
 
-  private _cart: Cart = new Cart();
+  private cart: Cart = new Cart();
   emitChangeSource = new Subject<Cart>();
   changeEmitted$ = this.emitChangeSource.asObservable();
 
-  constructor(private messageService: MessageService,
-              private http: HttpClient,
-    ) { }
+
+  constructor(private messageService: MessageService, private http: HttpClient) { }
 
   get cart$(): Observable<Cart> {
-    return of(this._cart);
+    return of(this.cart);
   }
 
   getGames(): Observable<VideoGame[]> {
-    this.messageService.add('GameService: fetched games');
-    console.log(environment.gamesUrl);
+    this.messageService.add('GameService: fetched games @' + environment.gamesUrl);
     return this.http.get<VideoGame[]>(environment.gamesUrl);
   }
 
   getGame(id: number): Observable<VideoGame> {
-      this.messageService.add(`GameService: fetched game id=${id}`);
-      return this.http.get<VideoGame>(`${environment.gamesUrl}/${id}`);
+    this.messageService.add(`GameService: fetched game id=${id}`);
+    return this.http.get<VideoGame>(`${environment.gamesUrl}/${id}`);
   }
 
   getTop4(): Observable<VideoGame[]> {
@@ -46,16 +44,15 @@ export class GameService {
     );
   }
 
+  addToCart(game: VideoGame): void {
+    this.messageService.add('GameService: add ' + game.title + ' to cart');
+    this.cart.add(game);
+    this.emitChangeSource.next(this.cart);
+  }
+
   incrementNbView(game: VideoGame): void {
     game.nbView++;
     console.log(`Game.nbView++ ${game.id}`);
-    console.log(VIDEOGAMES);
-  }
-
-  addToCart(game: VideoGame): void {
-    this.messageService.add('GameService: add ' + game.title + ' to cart');
-    this._cart.add(game);
-    this.emitChangeSource.next(this._cart);
   }
 
   updateGame(game: VideoGame): Observable<any> {

@@ -8,8 +8,14 @@ import { GamesComponent } from './games/games.component';
 import { GameDetailComponent } from './game-detail/game-detail.component';
 import { CartComponent } from './cart/cart.component';
 import { MessagesComponent } from './messages/messages.component';
-import { AppRoutingModule } from './app-routing.module';
+import { AppRoutingModule } from './/app-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { InMemoryDataService } from './shared/in-memory-data.service';
+import { GameCreateComponent } from './game-create/game-create.component';
+import { GamesSearchComponent } from './games-search/games-search.component';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -19,6 +25,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     CartComponent,
     MessagesComponent,
     DashboardComponent,
+    GameCreateComponent,
+    GamesSearchComponent,
   ],
   imports: [
     BrowserModule,
@@ -26,8 +34,20 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     BrowserAnimationsModule,
     MaterialModule,
     AppRoutingModule,
+    HttpClientModule,
+    environment.production ? [] : HttpClientInMemoryWebApiModule.forRoot(
+        InMemoryDataService, { dataEncapsulation: false }
+      )
   ],
-  providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+
+export class AppModule {
+
+  InMemoryWebApiForRoot(): any {
+    HttpClientInMemoryWebApiModule.forRoot(
+      InMemoryDataService, { dataEncapsulation: false }
+    );
+  }
+
+ }

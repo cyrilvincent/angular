@@ -26,6 +26,7 @@ export class GameDetailComponent implements OnInit {
         .subscribe(game => {
           this.game = game;
           this.game.nbView += 1;
+          this.gameService.updateGame(this.game).subscribe();
         });
   }
 
@@ -34,12 +35,17 @@ export class GameDetailComponent implements OnInit {
   }
 
   deleteGame() {
-    this.gameService.deleteGame(this.game);
+    this.gameService.deleteGame(this.game.id);
     this.goBack();
   }
 
   goBack(): void {
     this.router.navigate(['/games']);
+  }
+
+  save(): void {
+    this.gameService.updateGame(this.game)
+        .subscribe(() => this.goBack());
   }
 
 }
