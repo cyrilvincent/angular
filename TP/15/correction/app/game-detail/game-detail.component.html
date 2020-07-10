@@ -1,3 +1,4 @@
+<button (click)="goBack()">Go Back</button>
 <div id="game-detail" *ngIf="game">
   <ng-container>
     <mat-card class="game-card">
@@ -15,7 +16,7 @@
           </div>
           <div>
             <a (click)="addToCart()">
-              <i class="material-icons cart">
+              <i class="material-icons">
                 add_shopping_cart
               </i>
             </a>
@@ -33,6 +34,9 @@
       <div id="game-json">
           <pre>{{game | json}}</pre>
       </div>
+      <div>
+        <button (click)="deleteGame()">Delete</button>
+      </div>
   </ng-container>
-  <button (click)="goBack()">go back</button>
 </div>
+<button (click)="goBack()">Go Back</button>

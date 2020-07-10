@@ -1,5 +1,6 @@
 import { Component, OnInit, OnChanges } from '@angular/core';
 import { GameService } from '../shared/game.service';
+import {MessageService} from '../shared/message.service';
 
 @Component({
   selector: 'app-cart',
@@ -10,10 +11,12 @@ export class CartComponent implements OnInit {
 
   nbElement = 0;
 
-  constructor(public gameService: GameService) { } // private for solution1, public for solution2
+  constructor(private gameService: GameService, private messageService: MessageService) { }
 
   ngOnInit() {
-    this.gameService.cart$.subscribe(cart => this.nbElement = cart.games.length);
+    this.gameService.changeEmitted$.subscribe(
+      cart => this.nbElement = cart.games.length
+    );
   }
 
 }

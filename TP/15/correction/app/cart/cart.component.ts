@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import {GameService} from '../shared/game.service';
+import { Component, OnInit, OnChanges } from '@angular/core';
+import { GameService } from '../shared/game.service';
 import {MessageService} from '../shared/message.service';
 
 @Component({
@@ -11,8 +11,7 @@ export class CartComponent implements OnInit {
 
   nbElement = 0;
 
-  constructor(private gameService: GameService,
-              private messageService: MessageService) { }
+  constructor(private gameService: GameService, private messageService: MessageService) { }
 
   ngOnInit() {
     this.gameService.changeEmitted$.subscribe(

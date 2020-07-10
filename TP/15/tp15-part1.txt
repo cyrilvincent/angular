@@ -3,7 +3,7 @@ Routing
 1/ Créer le module app-routing avec ng generate module app-routing --flat --module=app
     --flat indique qu'il ne créé pas de sous dossier
 2/ Copier les fichiers app* dans app/
-3/ Examiner le module app-routing
+3/ Copier le contenu de app-routing.module.ts
 4/ Dans le composant app.component.html effacer <app-games></app-games> et <app-cart></app-cart> le cas échéant
 5/ A la place ajouter le composant <router-outlet></router-outlet>
 6/ Tester, pourquoi l'URL se termine pas /games ?
