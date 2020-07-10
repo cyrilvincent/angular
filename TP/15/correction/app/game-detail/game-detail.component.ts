@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, Output, OnChanges, EventEmitter } from '@angular/core';
 import { VideoGame, Cart } from '../shared/video-game';
 import { GameService } from '../shared/game.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Location } from '@angular/common';
 
 @Component({
@@ -14,7 +14,7 @@ export class GameDetailComponent implements OnInit {
   @Input() game: VideoGame;
   @Output() addedToCard = new EventEmitter<Cart>();
 
-  constructor(private gameService: GameService, private route: ActivatedRoute, private location: Location) { }
+  constructor(private gameService: GameService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
     this.getGame();
@@ -31,7 +31,6 @@ export class GameDetailComponent implements OnInit {
 
   addToCart() {
     this.gameService.addToCart(this.game);
-    // this.addedToCard.emit(this.gameService._cart); // Local upload event strategy, not working with <router-outlet>
   }
 
   deleteGame() {
@@ -40,7 +39,7 @@ export class GameDetailComponent implements OnInit {
   }
 
   goBack(): void {
-    this.location.back();
+    this.router.navigate(['/games']);
   }
 
 }

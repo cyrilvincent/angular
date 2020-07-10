@@ -17,8 +17,7 @@ REST Service
     import { HttpClient, HttpHeaders } from '@angular/common/http';
     import { environment } from '../environments/environment';
 7/ Injecter http: HttpClient
-8/ Dans getGames remplacer le code :
-    // return of(VIDEOGAMES.sort((x, y) => x.id - y.id));
+8/ Dans getGames remplacer le code par le code suivant :
     return this.http.get<VideoGame[]>(environment.gamesUrl);
 9/ Pourquoi la signature de la méthode ne change pas ?
 10/ Tester

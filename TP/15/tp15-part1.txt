@@ -52,7 +52,7 @@ Routing
     }
 
     goBack(): void {
-        this.location.back();
+        this.router.navigate(['/games']);
     }
 15/ Appeler getGame & incrementNbView depuis ngOnInit()
 16/ Si elle existe commenter onChanges()
