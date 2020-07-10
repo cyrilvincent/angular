@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import {VIDEOGAMES} from './mock-video-games';
 import {VideoGame, Cart} from './video-game';
 import {Observable, of} from 'rxjs';
-import {map} from 'rxjs/operators';
+import {map, filter} from 'rxjs/operators';
 import {MessageService} from './message.service';
 
 @Injectable({
@@ -11,20 +11,26 @@ import {MessageService} from './message.service';
 export class GameService {
 
   cart$: Observable<Cart> = of(new Cart());
+  games: VideoGame[] = VIDEOGAMES;
 
   constructor(private messageService: MessageService) { }
 
   getGames(): Observable<VideoGame[]> {
     this.messageService.add('GameService: fetched games');
-    return of(VIDEOGAMES);
+    return of(this.games);
   }
 
   addToCart(game: VideoGame): void {
     this.messageService.add('GameService: add ' + game.title + ' to cart');
-    // this.cart.add(game);
     this.cart$.pipe(
       map(cart => cart.add(game))
     );
+  }
+
+  deleteGame(game: VideoGame): Observable<VideoGame[]> {
+    this.messageService.add('GameService: delete ' + game.title);
+    this.games = this.games.filter(g => g.id !== game.id);
+    return of(this.games);
   }
 
 }

@@ -24,11 +24,13 @@ export class GamesComponent implements OnInit {
   }
 
   getGames(): void {
-    this.games = this.gameService.getGames();
+    this.gameService.getGames().subscribe(games => this.games = games);
   }
 
   deleteGame(game: VideoGame): void {
-    this.games = this.gameService.deleteGame(game);
+    this.gameService.deleteGame(game).subscribe(games => this.games = games);
     this.selectedGame = null;
   }
+
+
 }
