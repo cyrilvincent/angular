@@ -8,6 +8,13 @@
 </nav>
 <router-outlet></router-outlet>
 <app-messages></app-messages>
+<div class="footer">
+    Version {{environment.version}} 
+    <span *ngIf="!environment.production">
+        DEV
+    </span>
+    (c) {{environment.copyright}}
+</div>
 
 
 

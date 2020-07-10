@@ -32,6 +32,17 @@ describe('MapTest', () => {
     });
 });
 
+
+describe('MapOfTest', () => {
+    const tab1 = [1, 2, 3];
+    const otab = rx.of(tab1);
+    otab.pipe(
+        op.map((x: Array<number>) => x.push(4)),
+    ).subscribe((x: number) => {
+        console.log(x);
+    });
+});
+
 describe('FilterTest', () => {
     const tab2 = [1, 2, 3, 4];
     const otab2 = rx.from(tab2);
@@ -59,13 +70,13 @@ function* mapAsync(self, mapfn) {
 function* reduceAsync(self, reduceFn, initialValue = 0) {
     let acc = initialValue;
     for (const cur of self) {
-        acc = reduceFn(acc, cur)
+        acc = reduceFn(acc, cur);
     }
     return acc;
 }
 
-let res = filterAsync([1,2,3,4,5,6], (x) => x % 2 === 0 );
-let res2 = mapAsync(res, (x) => x * 10);
+const res = filterAsync([1, 2, 3, 4, 5, 6], (x) => x % 2 === 0 );
+const res2 = mapAsync(res, (x) => x * 10);
 for (const elem of res2) {
     console.log(elem);
 }
@@ -101,6 +112,16 @@ describe('ReduceTest', () => {
         op.reduce((x: number, y) => x + y)
     ).subscribe((value) => {
         it('should be 10', () => expect(value).toBe(10) );
+    });
+});
+
+describe('Reduce2Test', () => {
+    const tab1 = [1, 2, 3, 4];
+    const otab = rx.from(tab1);
+    otab.pipe(
+        op.reduce((x: number, y) => x * y, 1)
+    ).subscribe((value) => {
+        it('should be 24', () => expect(value).toBe(24) );
     });
 });
 

@@ -120,7 +120,7 @@ def search():
 def cmp(g1, g2):
   return g2["nbView"] - g1["nbView"]
 
-@app.route("/games", methods=['PUT'])
+@app.route("/games", methods=['POST'])
 def update():
   try:
     game = flask.request.json
@@ -143,7 +143,7 @@ def delete(id):
     print(f"DELETE /games/{id} returns 404")
     return flask.abort(404)
 
-@app.route("/games", methods=['POST'])
+@app.route("/games", methods=['PUT'])
 def insert():
   game = flask.request.json
   mock.append(game)

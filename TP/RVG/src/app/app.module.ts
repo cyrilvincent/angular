@@ -44,10 +44,10 @@ import { environment } from '../environments/environment';
 
 export class AppModule {
 
-  InMemoryWebApiForRoot(): any {
+  /*InMemoryWebApiForRoot(): any {
     HttpClientInMemoryWebApiModule.forRoot(
       InMemoryDataService, { dataEncapsulation: false }
     );
-  }
+  }*/
 
  }

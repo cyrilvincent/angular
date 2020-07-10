@@ -1,14 +1,20 @@
 let s = 'Hello, World!';
 console.log(s);
-let tab: number[] = [1, 5, 9, 12, 22, 53, 0, -1, -99, 99];
+
+let tab: number[] = [1, 5, 9, 12, 22, 53, 99, -1, -99, 0];
 for (const i of tab) {
     console.log(i);
 }
-let max: number = tab[0];
-for (let i = 1; i < tab.length; i++) {
-    if (tab[i] > max) {
-        max = tab[i];
+
+function max(l: Array<number>): number {
+    let res: number = l[0];
+    for (let i = 1; i < l.length; i++) {
+        if (l[i] > res) {
+            res = l[i];
+        }
     }
+    return res;
 }
-console.log(max);
+
+console.log(max(tab));
 

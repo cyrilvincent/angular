@@ -11,7 +11,7 @@ export class GamesComponent implements OnInit {
 
   games: VideoGame[];
   selectedGame: VideoGame;
-  newGame: VideoGame = new VideoGame();
+
 
   constructor(private gameService: GameService) {}
 
@@ -31,4 +31,5 @@ export class GamesComponent implements OnInit {
     this.games = this.games.filter(g => g !== game);
     this.gameService.deleteGame(game.id).subscribe();
   }
+
 }

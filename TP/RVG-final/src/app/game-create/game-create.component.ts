@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { VideoGame } from '../shared/video-game';
 import { GameService } from '../shared/game.service';
-import { Location } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-game-create',
@@ -13,7 +13,7 @@ export class GameCreateComponent implements OnInit {
   game: VideoGame = new VideoGame();
 
   constructor(private gameService: GameService,
-              private location: Location) { }
+              private router: Router) { }
 
   ngOnInit() {
     this.game.year = 1970;
@@ -25,14 +25,10 @@ export class GameCreateComponent implements OnInit {
     this.game.title = '';
   }
 
-  goBack(): void {
-    this.location.back();
-  }
-
   add(): void {
     this.gameService.addGame(this.game)
       .subscribe(_ => {
-        this.goBack();
+        this.router.navigate(['/games']);
       });
   }
 }

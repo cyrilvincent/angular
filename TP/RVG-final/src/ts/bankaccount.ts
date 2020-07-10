@@ -11,7 +11,7 @@ class BankAccount implements IBankAccount {
     private static _accountCounter: 0;
     private _id: number;
     private _owner: Customer;
-    protected _balance: 0;
+    protected _balance = 0;
     private _creationDate: Date = new Date();
     private _transactions: Array<Transaction> = new Array<Transaction>();
 
@@ -122,6 +122,7 @@ console.log('BankAccount');
 let cust: Customer = new Customer(1, 'Cyril', 'Vincent');
 let ba: BankAccount = new BankAccount(1, cust);
 ba.deposit(1000);
+console.log(ba.balance);
 ba.withdraw(500);
 console.log(ba);
 let iba: InterestBankAccount = new InterestBankAccount(1, cust , 0.01);

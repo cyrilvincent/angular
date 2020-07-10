@@ -72,8 +72,12 @@ export class GameService {
 
   searchGames(term: string): Observable<VideoGame[]> {
     if (!term.trim()) {
-      return of([]);
+        return of([]);
     }
-    return this.http.get<VideoGame[]>(`${environment.gamesUrl}/?title=${term}`);
-  }
+    if (environment.production) {
+        return this.http.get<VideoGame[]>(`${environment.gamesUrl}/search?q=${term}`);
+    } else {
+        return this.http.get<VideoGame[]>(`${environment.gamesUrl}/?title=${term}`);
+    }
+}
 }
