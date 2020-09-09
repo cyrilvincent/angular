@@ -5,7 +5,7 @@ for (const i of tab) {
     console.log(i);
 }
 
-function max(tab: number[]): number {
+function max(tab: Array<number>): number {
     let res: number = tab[0];
     for (let i = 1; i < tab.length; i++) {
         if (tab[i] > res) {

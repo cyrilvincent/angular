@@ -2,7 +2,7 @@ Filters & Binding
 =================
 1/ Afficher le nom du jeux en majuscule
 2/ Afficher le code JSON de game
-3/ Ajouter le code de form.html à la fin du composant game
+3/ Ajouter le code de form.html à la fin du composant games
 4/ Binder le titre du jeux, notez que le site ne marche plus et qu'une erreur apparait dans l'inspecteur Chrome
 5/ Ajouter l'import de FormsModule dans app.module.ts (à 2 endroits)
 6/ Tester
