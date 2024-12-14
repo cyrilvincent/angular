@@ -79,7 +79,7 @@
     "karma-scss-preprocessor": "3.0.0",
     "moment": "2.22.2",
     "ng-packagr": "3.0.6",
-    "node-sass": "4.9.3",
+    "node-sass": "4.13.1",
     "protractor": "5.4.0",
     "standard-version": "4.4.0",
     "ts-helpers": "1.1.2",
