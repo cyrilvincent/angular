@@ -81,7 +81,7 @@
     "ng-packagr": "3.0.6",
     "node-sass": "4.9.3",
     "protractor": "5.4.0",
-    "standard-version": "4.4.0",
+    "standard-version": "8.0.1",
     "ts-helpers": "1.1.2",
     "ts-node": "7.0.0",
     "tsickle": "0.32.1",
